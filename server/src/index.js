@@ -1,6 +1,7 @@
 // Libraries
 import Koa from 'koa'
 import Route from 'koa-route'
+import Logger from 'koa-logger'
 import Cors from 'kcors'
 
 // Setup app
@@ -8,6 +9,7 @@ const app = new Koa()
 const PORT = 8080
 
 // Setup middlewares
+app.use(Logger())
 app.use(Cors())
 
 // Test request
