@@ -1,7 +1,7 @@
 {
-  "name": "tits-backend",
+  "name": "tiss-backend",
   "version": "0.1.0",
-  "description": "TIT.s REST Backend",
+  "description": "TISS REST Backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Entake/tit.s/"
+    "url": "https://github.com/Entake/tiss/"
   },
   "keywords": [
     "REST",

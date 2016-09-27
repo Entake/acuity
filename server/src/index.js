@@ -17,5 +17,5 @@ app.use(Route.get('/', ctx => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log('🌍  tits-backend is listening at http://localhost:8080')
+  console.log('🌍  tiss-backend is listening at http://localhost:8080')
 })

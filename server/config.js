@@ -1,4 +1,4 @@
 exports.db = {
-  host: process.env.TITS_DB_URL || 'localhost'.
-  port: process.env.TITS_DB_PORT || 28015
+  host: process.env.TISS_DB_URL || 'localhost',
+  port: process.env.TISS_DB_PORT || 28015
 }
