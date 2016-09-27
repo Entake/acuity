@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index",
+    "db:start": "node util/db/start",
+    "db:stop": "docker stop tissdb",
+    "db:rm": "docker rm tissdb"
   },
   "repository": {
     "type": "git",
