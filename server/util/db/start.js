@@ -8,7 +8,7 @@ const Path = require('path')
 const dbPath = Path.join(__dirname, '..', '..', 'db')
 
 // Docker run command
-const cmd = `docker run -d -p 28015:28015 -p 8090:8080 -v ${dbPath}:/data --name tissdb rethinkdb`
+const cmd = `docker run -d -p 28015:28015 -p 8090:8080 -v ${dbPath}:/data --name acuitydb rethinkdb`
 
 // Execute command
 const start = Exec(cmd)
@@ -19,7 +19,7 @@ let dbImage = false
 // Runs when command writes to stdout
 start.stdout.on('data', (data) => {
   if (data) {
-    console.log('Sucessfully created tissdb\n')
+    console.log('Sucessfully created acuitydb\n')
   }
 })
 
@@ -29,6 +29,6 @@ start.stderr.on('data', (data) => {
     console.log(data)
     dbImage = true
   } else {
-    console.log('Error while creating tissdb:', data)
+    console.log('Error while creating acuitydb:', data)
   }
 })

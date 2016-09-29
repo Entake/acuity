@@ -19,5 +19,5 @@ app.use(Route.get('/', ctx => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log('🌍  tiss-backend is listening at http://localhost:8080')
+  console.log('🌍  acuity-backend is listening at http://localhost:8080')
 })

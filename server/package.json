@@ -1,18 +1,18 @@
 {
-  "name": "tiss-backend",
+  "name": "acuity-backend",
   "version": "0.1.0",
-  "description": "TISS REST Backend",
+  "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
     "db:start": "node util/db/start",
-    "db:stop": "docker stop tissdb",
-    "db:rm": "docker rm tissdb"
+    "db:stop": "docker stop acuitydb",
+    "db:rm": "docker rm acuitydb"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Entake/tiss/"
+    "url": "https://github.com/Entake/acuity/"
   },
   "keywords": [
     "REST",
