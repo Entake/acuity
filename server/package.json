@@ -4,7 +4,7 @@
   "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require test/helpers test/**/*.spec.js --compilers js:babel-register -R dot --timeout 5000",
+    "test": "mocha --require test/helpers test/**/*.spec.js --compilers js:babel-register -R spec --ui bdd --timeout 5000",
     "start": "node index",
     "db:start": "node util/db/start",
     "db:stop": "docker stop acuitydb",

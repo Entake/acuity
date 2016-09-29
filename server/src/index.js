@@ -1,6 +1,10 @@
-import app from './server'
+import createServer from './server'
+
+const PORT = 8080
 
 // Start server
-app.listen(8080, () => {
-  console.log('🌍  acuity-backend is listening at http://localhost:8080')
+createServer().then(app => {
+  app.listen(PORT, () => {
+    console.log(`🌍  acuity-backend is listening at http://localhost:${PORT}`)
+  })
 })

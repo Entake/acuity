@@ -7,10 +7,27 @@ describe('Acuity API', () => {
   })
 
   describe('GET /', () => {
-    it('presses the button on the sacred box', async () => {
+    it('Returns R&M reference', async () => {
       await request.get('/')
-        .expect(200, {
-          data: 'I\'m mr. Meeseeks!'
+        .expect(200)
+        .expect('Content-Type', 'text/plain; charset=utf-8')
+        .expect((err, res) => {
+          if (err) return err
+
+          expect(res.text).to.equal('I\'m mr. Meeseeks!')
+        })
+    })
+  })
+
+  describe('GET /RandomURL', () => {
+    it('Returns 404 on nonexistant URL', async () => {
+      await request.get('/RandomURL')
+        .expect(404)
+        .expect('Content-Type', 'text/plain; charset=utf-8')
+        .expect((err, res) => {
+          if (err) return err
+
+          expect(res.text).to.equal('Not found')
         })
     })
   })
