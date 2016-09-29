@@ -1,15 +1,18 @@
 // Libraries
 import Koa from 'koa'
 import Route from 'koa-route'
-import Logger from 'koa-logger'
+import Morgan from 'koa-morgan'
 import Cors from 'kcors'
+
+// Our modules
+import { logger } from './util'
 
 export default async function Server () {
   // Setup app
   const app = new Koa()
 
   // Setup middlewares
-  app.use(Logger())
+  app.use(Morgan(process.env.NODE_ENV ? 'combined' : 'dev', { stream: logger.stream }))
   app.use(Cors())
 
   // Test request
