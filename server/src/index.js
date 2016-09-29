@@ -13,5 +13,12 @@ thinky.dbReady().then(() => {
     app.listen(PORT, () => {
       logger.info(`🌍  acuity-backend is listening at http://localhost:${PORT}`)
     })
+
+    // catch errors
+  }).catch(e => {
+    logger.error(e)
+    process.exit()
   })
+}).catch(e => {
+  logger.error(e)
 })
