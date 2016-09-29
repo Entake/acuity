@@ -48,6 +48,7 @@
     "koa-morgan": "^1.0.1",
     "koa-route": "^3.2.0",
     "lodash": "^4.16.2",
+    "thinky": "^2.3.6",
     "winston": "^2.2.0"
   },
   "babel": {

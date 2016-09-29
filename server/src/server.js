@@ -11,8 +11,13 @@ export default async function Server () {
   // Setup app
   const app = new Koa()
 
+  // Setup logging
+  app.use(Morgan(
+    process.env.NODE_ENV ? 'combined' : 'dev',
+    { stream: logger.stream }
+  ))
+
   // Setup middlewares
-  app.use(Morgan(process.env.NODE_ENV ? 'combined' : 'dev', { stream: logger.stream }))
   app.use(Cors())
 
   // Test request
