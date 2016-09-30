@@ -1,0 +1,83 @@
+{
+  "name": "acuity-backend",
+  "version": "0.1.0",
+  "description": "Acuity REST Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/helpers test/**/*.spec.js --compilers js:babel-register --timeout 5000",
+    "start": "node index",
+    "db:create": "node util/db/start",
+    "db:start": "docker start acuitydb",
+    "db:stop": "docker stop acuitydb",
+    "db:rm": "docker rm acuitydb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Entake/acuity/"
+  },
+  "keywords": [
+    "REST",
+    "JavaScript",
+    "thatimagetaggingsite",
+    "Node",
+    "RethinkDB",
+    "GoogleVision"
+  ],
+  "author": "Elias Jørgensen <elias@entake.dk> (http://eliasjorgensen.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "app-module-path": "^2.0.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-transform-do-expressions": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015-node6": "^0.3.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.6.1",
+    "eslint-config-standard": "^6.1.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "mocha": "^3.1.0",
+    "supertest": "^2.0.0"
+  },
+  "dependencies": {
+    "kcors": "^2.2.0",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.0.1",
+    "lodash": "^4.16.2",
+    "thinky": "^2.3.6",
+    "winston": "^2.2.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node6",
+      "stage-1"
+    ],
+    "plugins": [
+      "transform-runtime",
+      "transform-do-expressions"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard"
+    ],
+    "rules": {
+      "no-multi-spaces": [
+        1,
+        {
+          "exceptions": {
+            "VariableDeclarator": true,
+            "ImportDeclaration": true
+          }
+        }
+      ]
+    }
+  }
+}
