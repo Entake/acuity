@@ -22,3 +22,7 @@ thinky.dbReady().then(() => {
 }).catch(e => {
   logger.error(e)
 })
+
+// output all uncaught exceptions
+process.on('uncaughtException', err => logger.error('uncaught exception:', err))
+process.on('unhandledRejection', err => logger.error('unhandled rejection:', err))
