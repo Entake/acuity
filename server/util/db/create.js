@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-
 // Libraries
 const Exec = require('child_process').exec
 const Path = require('path')

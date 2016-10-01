@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require test/helpers test/**/*.spec.js --compilers js:babel-register --timeout 5000",
     "start": "node index",
-    "db:create": "node util/db/start",
+    "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
     "db:stop": "docker stop acuitydb",
     "db:rm": "docker rm acuitydb"
