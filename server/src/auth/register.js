@@ -8,19 +8,25 @@ export default router => {
     const { login, password, passwordRepeat } = ctx.body
     logger.info(ctx.body)
 
+    // Check if passwords match
     if (password !== passwordRepeat) {
       ctx.status(400).body({error: 'Passwords do not match!'})
       return
     }
 
+    // Hash password
     const hashedPassword = hash(password)
 
+    // Create user
     const user = new User({
       login,
       password: hashedPassword
     })
+
+    // Save user to DB
     await user.save()
 
+    // If successful, respond with status 201 'Created'
     ctx.status(201)
   }))
 }
