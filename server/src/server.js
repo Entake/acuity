@@ -10,11 +10,15 @@ import Passport from 'koa-passport'
 
 // Our modules
 import { logger } from './util'
+import { auth as authConfig } from '../config'
+import setupAuthRoutes from './auth'
 
 export default async function Server () {
   // Setup app
   const app = new Koa()
   const router = new Router()
+  // TODO: Find out if this is the session secret, or wtf it's used for
+  app.keys = [authConfig.sessionSecret]
 
   // Setup logging
   app.use(Morgan(
@@ -27,19 +31,23 @@ export default async function Server () {
     ctx.body = 'I\'m mr. Meeseeks!'
   })
 
+  setupAuthRoutes(router)
+
   // Setup middlewares
   app.use(Cors())
   app.use(Parser())
   app.use(router.routes())
   app.use(router.allowedMethods())
-  app.use(Convert(Session({
-    cookie: {
-      path: '/',
-      maxage: 2592000000, // 1 month
-      secure: true,
-      signed: true
-    }
-  })))
+  app.use(Convert(
+    Session({
+      cookie: {
+        path: '/',
+        maxage: 2592000000, // 1 month
+        secure: true,
+        signed: true
+      }
+    })
+  ))
   app.use(Passport.initialize())
   app.use(Passport.session())
 

@@ -5,5 +5,6 @@ exports.db = {
 }
 
 exports.auth = {
-  passwordSalt: process.env.ACUITY_PASSWORD_SALT || 'unicornLlamas'
+  passwordSalt: process.env.ACUITY_PASSWORD_SALT || 'unicornLlamas',
+  sessionSecret: process.env.ACUITY_SESSION_SECRET || 'spaceMonkeys'
 }
