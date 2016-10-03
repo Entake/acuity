@@ -4,7 +4,7 @@
   "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require test/helpers test/**/*.spec.js --compilers js:babel-register --timeout 5000",
+    "test": "mocha --require test/helpers test/index.js --compilers js:babel-register --timeout 5000",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
@@ -41,6 +41,7 @@
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "mocha": "^3.1.0",
+    "reqlite": "^2.3.0",
     "supertest": "^2.0.0"
   },
   "dependencies": {

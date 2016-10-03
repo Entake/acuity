@@ -9,6 +9,7 @@
     "before": true,
     "beforeEach": true,
     "after": true,
-    "afterEach": true
+    "afterEach": true,
+    "reqlite": true
   }
 }

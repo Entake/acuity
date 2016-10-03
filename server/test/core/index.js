@@ -1,6 +1,6 @@
 import createServer from '../helpers/createServer'
 
-describe('Acuity API', () => {
+export const core = describe('Acuity API', () => {
   let request
   before(async () => {
     request = await createServer()
