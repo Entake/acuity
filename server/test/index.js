@@ -1,29 +1,13 @@
-// Our modules
-import { db as dbConfig } from '../config'
-import { thinky, r } from 'db'
+// Set NODE_ENV to testing
+process.env.NODE_ENV = 'testing'
 
-// Tests
-import core from './core'
-//import { login, register } from './auth'
+// Require babel hook
+require('babel-core/register')
 
-thinky.dbReady().then(async () => {
-  // Prepare DB for tests
-  describe('Prepare for tests', () => {
-    it('Should clean the database', async () => {
-      await r.db(dbConfig.db).table('User').delete()
-    })
-  })
+// Create Reqlite instance
+const ReqliteServer = require('reqlite')
+const reqlite = new ReqliteServer({silent: true})
 
-  // Execute tests
-  core()
-  //register()
-  // login()
-
-  // Close DB connections
-  describe('Cleanup after tests', () => {
-    it('Should close all db connections', () => {
-      setImmediate(() => r.getPoolMaster().drain())
-      reqlite.kill()
-    })
-  })
-})
+// Require and start our tests
+const startTests = require('./startTests').default
+startTests(reqlite)

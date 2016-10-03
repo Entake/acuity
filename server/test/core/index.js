@@ -1,34 +1,40 @@
-import createServer from '../helpers/createServer'
+// Our modules
+// import createServer from '../helpers/createServer'
+import server from '../../src/server'
+import supertest from 'supertest'
 
-export const core = describe('Acuity API', () => {
+export default (test) => {
   let request
-  before(async () => {
-    request = await createServer()
+  test((t) => {
+    request = supertest(server.listen(3000))
+    t.end()
   })
 
-  describe('GET /', () => {
-    it('Returns R&M reference', async () => {
-      await request.get('/')
-        .expect(200)
-        .expect('Content-Type', 'text/plain; charset=utf-8')
-        .expect((err, res) => {
-          if (err) return err
+  test('GET /', (t) => {
+    request.get('/')
+      .expect(200)
+      .expect('Content-Type', /text\/html/)
+      .end((err, res) => {
+        const expected = 'Hello world!'
+        const actual = res.text
 
-          expect(res.text).to.equal('I\'m mr. Meeseeks!')
-        })
-    })
+        t.error(err, 'No error')
+        t.equal(actual, expected, 'Retrieve body')
+        t.end()
+      })
   })
 
-  describe('GET /RandomURL', () => {
-    it('Returns 404 on nonexistant URL', async () => {
-      await request.get('/RandomURL')
-        .expect(404)
-        .expect('Content-Type', 'text/plain; charset=utf-8')
-        .expect((err, res) => {
-          if (err) return err
+  test('404 on nonexistant URL', (t) => {
+    request.get('/GETShouldFailOnRandomURL')
+      .expect(404)
+      .expect('Content-Type', /text\/html/)
+      .end((err, res) => {
+        const expected = 'Cannot GET /GETShouldFailOnRandomURL\n'
+        const actual = res.text
 
-          expect(res.text).to.equal('Not found')
-        })
-    })
+        t.error(err, 'No error')
+        t.equal(actual, expected, 'Retrieve body')
+        t.end()
+      })
   })
-})
+}

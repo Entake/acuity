@@ -4,7 +4,7 @@
   "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require test/helpers test/index.js --compilers js:babel-register --timeout 5000",
+    "test": "node test/index.js",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
@@ -26,7 +26,6 @@
   "author": "Elias Jørgensen <elias@entake.dk> (http://eliasjorgensen.me)",
   "license": "MIT",
   "devDependencies": {
-    "app-module-path": "^2.0.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.0.0",
@@ -34,15 +33,16 @@
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-es2015-node6": "^0.3.0",
     "babel-preset-stage-1": "^6.16.0",
-    "chai": "^3.5.0",
     "eslint": "^3.6.1",
     "eslint-config-standard": "^6.1.0",
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
-    "mocha": "^3.1.0",
     "reqlite": "^2.3.0",
-    "supertest": "^2.0.0"
+    "supertest": "^2.0.0",
+    "supertest-koa-agent": "^0.3.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.2"
   },
   "dependencies": {
     "kcors": "^2.2.0",
@@ -53,7 +53,6 @@
     "koa-morgan": "^1.0.1",
     "koa-passport": "^2.2.2",
     "koa-router": "^7.0.1",
-    "lodash": "^4.16.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "thinky": "^2.3.6",

@@ -1,5 +1,5 @@
 // Our modules
-import logger from './logger'
+import { logger } from './logger'
 
 export const asyncRequest = (handler) =>
   (ctx, next) =>
