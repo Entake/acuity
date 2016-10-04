@@ -7,3 +7,5 @@ export default router => {
   login(router)
   register(router)
 }
+
+export { loginTaken } from './register'
