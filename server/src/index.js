@@ -9,15 +9,8 @@ const PORT = 8080
 thinky.dbReady().then(() => {
   logger.info('Database ready, starting server...')
   // Start server
-  createServer().then(app => {
-    app.listen(PORT, () => {
-      logger.info(`🌍  acuity-backend is listening at http://localhost:${PORT}`)
-    })
-
-    // catch errors
-  }).catch(e => {
-    logger.error(e)
-    process.exit()
+  createServer().listen(PORT, () => {
+    logger.info(`🌍  acuity-backend is listening at http://localhost:${PORT}`)
   })
 }).catch(e => {
   logger.error(e)

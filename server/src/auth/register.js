@@ -5,12 +5,13 @@ import { logger, hash, asyncRequest } from '../util'
 export default router => {
   router.post('/api/register', asyncRequest(async (ctx, next) => {
     // Get user input
-    const { login, password, passwordRepeat } = ctx.body
-    logger.info(ctx.body)
+    const { login, password, passwordRepeat } = ctx.request.body
+    logger.info(ctx.request.body)
 
     // Check if passwords match
     if (password !== passwordRepeat) {
-      ctx.status(400).body({error: 'Passwords do not match!'})
+      ctx.status = 400
+      ctx.body = {error: 'Passwords do not match!'}
       return
     }
 
@@ -27,6 +28,6 @@ export default router => {
     await user.save()
 
     // If successful, respond with status 201 'Created'
-    ctx.status(201)
+    ctx.status = 201
   }))
 }

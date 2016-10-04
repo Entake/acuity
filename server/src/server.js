@@ -13,7 +13,7 @@ import { logger } from './util'
 import { auth as authConfig } from '../config'
 import setupAuthRoutes from './auth'
 
-export default async function Server () {
+export default function Server () {
   // Setup app
   const app = new Koa()
   const router = new Router()

@@ -1,21 +1,10 @@
-// Our modules
-// import createServer from '../helpers/createServer'
-import server from '../../src/server'
-import supertest from 'supertest'
-
-export default (test) => {
-  let request
-  test((t) => {
-    request = supertest(server.listen(3000))
-    t.end()
-  })
-
+export default (test, request) => {
   test('GET /', (t) => {
     request.get('/')
       .expect(200)
-      .expect('Content-Type', /text\/html/)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((err, res) => {
-        const expected = 'Hello world!'
+        const expected = 'I\'m mr. Meeseeks!'
         const actual = res.text
 
         t.error(err, 'No error')
@@ -27,9 +16,9 @@ export default (test) => {
   test('404 on nonexistant URL', (t) => {
     request.get('/GETShouldFailOnRandomURL')
       .expect(404)
-      .expect('Content-Type', /text\/html/)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((err, res) => {
-        const expected = 'Cannot GET /GETShouldFailOnRandomURL\n'
+        const expected = 'Not Found'
         const actual = res.text
 
         t.error(err, 'No error')

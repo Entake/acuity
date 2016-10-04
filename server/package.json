@@ -4,7 +4,7 @@
   "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js",
+    "test": "node test/index.js | tap-diff",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
