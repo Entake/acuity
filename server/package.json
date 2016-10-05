@@ -45,6 +45,7 @@
     "tape": "^4.6.2"
   },
   "dependencies": {
+    "jsonwebtoken": "^7.1.9",
     "kcors": "^2.2.0",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.2.0",
@@ -54,6 +55,7 @@
     "koa-passport": "^2.2.2",
     "koa-router": "^7.0.1",
     "passport": "^0.3.2",
+    "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0",
     "thinky": "^2.3.6",
     "winston": "^2.2.0"

@@ -36,20 +36,20 @@ export default function Server () {
   // Setup middlewares
   app.use(Cors())
   app.use(Parser())
-  app.use(router.routes())
-  app.use(router.allowedMethods())
   app.use(Convert(
     Session({
       cookie: {
         path: '/',
         maxage: 2592000000, // 1 month
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
         signed: true
       }
     })
   ))
   app.use(Passport.initialize())
   app.use(Passport.session())
+  app.use(router.routes())
+  app.use(router.allowedMethods())
 
   return app
 }
