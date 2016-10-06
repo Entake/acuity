@@ -9,7 +9,7 @@ import createServer from '../src/server'
 
 // Our tests
 import core from './core'
-import { register } from './auth'
+import { register, login } from './auth'
 
 export default (reqlite) => {
   thinky.dbReady().then(() => {
@@ -25,6 +25,7 @@ export default (reqlite) => {
     // Run our tests
     core(test, request)
     register(test, request)
+    login(test, request)
 
     // Close server and DB Connections
     test('Close DB', (t) => {
