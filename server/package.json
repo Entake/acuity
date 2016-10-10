@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/index.js | tap-diff",
+    "test-ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
@@ -39,6 +40,7 @@
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
+    "nyc": "^8.3.1",
     "reqlite": "^2.3.0",
     "supertest": "^2.0.0",
     "supertest-koa-agent": "^0.3.0",
