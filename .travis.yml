@@ -1,0 +1,31 @@
+sudo: required
+
+services:
+  - docker
+
+language: node_js
+node_js:
+  - "6"
+
+env:
+  global:
+      - SERVER_TEST_IMG=entake/acuity-server:build-$TRAVIS_COMMIT
+      - SERVER_RELEASE_IMG=entake/acuity-server:latest
+
+before_install:
+  - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+
+install:
+  - docker build --pull -t $SERVER_TEST_IMG ./server
+
+script:
+  - docker run $SERVER_TEST_IMG npm test
+
+after_success:
+  - docker push $SERVER_TEST_IMG
+
+deploy:
+  provider: script
+  script: docker tag $SERVER_TEST_IMG $SERVER_RELEASE_IMG && docker push $SERVER_RELEASE_IMG
+  on:
+    branch: master
