@@ -14,6 +14,7 @@ env:
 
 before_install:
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+  - echo $COVERALLS_REPO_TOKEN
 
 install:
   - docker build --pull -t $SERVER_TEST_IMG ./server
