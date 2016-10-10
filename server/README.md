@@ -2,6 +2,8 @@
 
 > Just as magical as a unicorn
 
+[![Coverage Status](https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=master)](https://coveralls.io/github/Entake/acuity?branch=master)
+
 This is a REST API server, that provides CRUD capabilities, as well as user authentication, for the Acuity image sharing platform.
 The server is built using [Koa](http://koajs.com/) as the server backbone, and [Passport](http://passportjs.org/) as authentication middleware. The code is being compiled from ES2016+ by [Babel](https://babeljs.io/).
 It uses [RethinkDB](https://rethinkdb.com/) as the database, for storing data.
