@@ -17,6 +17,7 @@ before_install:
 
 install:
   - docker build --pull -t $SERVER_TEST_IMG ./server
+  - npm install -g nyc
 
 script:
   - docker run $SERVER_TEST_IMG nyc npm test && nyc report --reporter=text-lcov | coveralls
