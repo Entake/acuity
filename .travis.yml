@@ -25,9 +25,9 @@ script:
   - docker run -e COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN $SERVER_TEST_IMG npm run test-ci
 
 after_success:
-  - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" != "master" ]; then
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" != "master" ]; then
       docker push $SERVER_TEST_IMG
-    fi'
+    fi
 
 deploy:
   provider: script
