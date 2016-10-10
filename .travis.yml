@@ -9,7 +9,7 @@ node_js:
 
 env:
   global:
-      - SERVER_TEST_IMG=entake/acuity-server:build-$TRAVIS_COMMIT
+      - SERVER_TEST_IMG=entake/acuity-server:build-$TRAVIS_JOB_NUMBER
       - SERVER_RELEASE_IMG=entake/acuity-server:latest
 
 before_install:
