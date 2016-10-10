@@ -3,7 +3,8 @@
 > Free open-source image sharing platform - with computer vision aided image tagging
 
 [![Build Status](https://travis-ci.org/Entake/acuity.svg?branch=master)](https://travis-ci.org/Entake/acuity)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Entake/acuity/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Entake/acuity/master/LICENSE)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)    
 
 This repository contains all source code and materials for the Acuity image sharing platform.
 See `server` and `client` directories, for specific info, relating to those parts of the project.
