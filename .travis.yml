@@ -9,8 +9,10 @@ node_js:
 
 env:
   global:
-      - SERVER_TEST_IMG=entake/acuity-server:build-$BUILD_NUMBER
-      - SERVER_RELEASE_IMG=entake/acuity-server:latest
+    - ACUITY_SERVER_VERSION=0.1.0
+    - SERVER_IMG=entake/acuity-server
+    - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-test
+    - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
 
 before_install:
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
@@ -23,10 +25,15 @@ script:
   - docker run -e COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN $SERVER_TEST_IMG npm run test-ci
 
 after_success:
-  - docker push $SERVER_TEST_IMG
+  - 'if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" != "master" ]; then
+      docker push $SERVER_TEST_IMG
+    fi'
 
 deploy:
   provider: script
-  script: docker tag $SERVER_TEST_IMG $SERVER_RELEASE_IMG && docker push $SERVER_RELEASE_IMG
+  script: 'docker tag $SERVER_TEST_IMG $SERVER_RELEASE_IMG \
+          && docker tag $SERVER_TEST_IMG $SERVER_IMG:latest \
+          && docker push $SERVER_IMG:latest \
+          && docker push $SERVER_RELEASE_IMG'
   on:
     branch: master
