@@ -11,7 +11,7 @@ env:
   global:
     - ACUITY_SERVER_VERSION=0.1.0
     - SERVER_IMG=entake/acuity-server
-    - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-test
+    - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
 
 before_install:
@@ -34,3 +34,6 @@ deploy:
           && docker push $SERVER_RELEASE_IMG
   on:
     branch: master
+
+notifications:
+  email: false
