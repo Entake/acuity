@@ -1,9 +1,13 @@
-# Acuity
+<p align="center"><a href="https://thatimagetagging.site"><img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" /></a></p>
+<h3 align="center" style="font-size: 3em; margin-top:0; margin-bottom: 0;">Acuity</h3>
+<p align="center">Free open-source image sharing platform with automagical image tagging</p>
+<p align="center">
+<a href="https://travis-ci.org/alanshaw/david-www"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
+<a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSEw"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+<a href='https://coveralls.io/github/Entake/acuity?branch='><img src='https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=' alt='Coverage Status' /></a>
+</p>
 
-> Free open-source image sharing platform - with computer vision aided image tagging
-
-[![Build Status](https://travis-ci.org/Entake/acuity.svg?branch=master)](https://travis-ci.org/Entake/acuity)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Entake/acuity/master/LICENSE)
+---
 
 This repository contains all source code and materials for the Acuity image sharing platform.
 See `server` and `client` directories, for specific info, relating to those parts of the project.
