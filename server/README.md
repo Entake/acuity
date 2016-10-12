@@ -1,9 +1,17 @@
-# Acuity
+<p align="center"><a href="https://thatimagetagging.site"><img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" /></a></p>
+<h3 align="center">Acuity Server</h3>
+<p align="center">Backend API for the Acuity project</p>
+<p align="center">
+<a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
+<a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License"></a>
+<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style"></a>
+<a href='https://coveralls.io/github/Entake/acuity?branch='><img src='https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=' alt='Coverage Status' /></a>
+<a href="https://david-dm.org/Entake/acuity?path=server" title="dependencies status"><img src="https://david-dm.org/Entake/acuity/status.svg?path=server"/></a>
+<a href="https://david-dm.org/Entake/acuity?path=server&type=dev" title="devDependencies status"><img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=server"/></a>
+</p>
 
-> Just as magical as a unicorn
+---
 
-[![Coverage Status](https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=master)](https://coveralls.io/github/Entake/acuity?branch=master)
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 This is a REST API server, that provides CRUD capabilities, as well as user authentication, for the Acuity image sharing platform.
 The server is built using [Koa](http://koajs.com/) as the server backbone, and [Passport](http://passportjs.org/) as authentication middleware. The code is being compiled from ES2016+ by [Babel](https://babeljs.io/).
