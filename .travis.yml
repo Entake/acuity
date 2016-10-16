@@ -21,9 +21,10 @@ install:
   - docker build --pull -t $SERVER_TEST_IMG ./server
 
 script:
-  - docker run -e CODECOV_TOKEN=$CODECOV_TOKEN $SERVER_TEST_IMG npm run test-ci
+  - docker run $SERVER_TEST_IMG npm run test-ci
 
 after_success:
+  - docker run $SERVER_TEST_IMG bash <(curl -s https://codecov.io/env)
   - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_TEST_IMG"; fi
 
 deploy:
