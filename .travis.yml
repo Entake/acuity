@@ -13,6 +13,7 @@ env:
     - SERVER_IMG=entake/acuity-server
     - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
+    - REPORT_COVERAGE="bash <(curl -s https://codecov.io/env)"
 
 before_install:
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
@@ -24,7 +25,7 @@ script:
   - docker run $SERVER_TEST_IMG npm run test-ci
 
 after_success:
-  - docker run $SERVER_TEST_IMG bash <(curl -s https://codecov.io/env)
+  - docker run $SERVER_TEST_IMG $REPORT_COVERAGE
   - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_TEST_IMG"; fi
 
 deploy:
