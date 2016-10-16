@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/index.js | tap-diff",
-    "test-ci": "nyc npm test && nyc report --reporter=text-lcov | codecov",
+    "test-ci": "nyc npm test && nyc report --reporter=lcov > coverage.lcov && codecov",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
