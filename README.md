@@ -4,7 +4,7 @@
 <p align="center">
 <a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
 <a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSEw"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-<a href='https://coveralls.io/github/Entake/acuity?branch='><img src='https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=' alt='Coverage Status' /></a>
+<a href="https://codecov.io/gh/Entake/acuity"><img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" /></a>
 </p>
 
 ---

@@ -13,7 +13,7 @@ env:
     - SERVER_IMG=entake/acuity-server
     - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
-    - REPORT_COVERAGE="bash <(curl -s https://codecov.io/env)"
+    - REPORT_COVERAGE=`bash <(curl -s https://codecov.io/env)`
 
 before_install:
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
