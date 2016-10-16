@@ -11,7 +11,7 @@ env:
   global:
     - ACUITY_SERVER_VERSION=0.1.0
     - SERVER_IMG=entake/acuity-server
-    - SERVER_DEBUG_IMAGE=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
+    - SERVER_DEBUG_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
 
 cache:
@@ -31,8 +31,8 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR/server && bash <(curl -s https://codecov.io/bash) # Report coverage to Codecov
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD # Login to Docker Hub
-  - docker build --pull -t $SERVER_DEBUG_IMAGE $TRAVIS_BUILD_DIR/server # Build server debug image
-  - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_DEBUG_IMAGE"; fi # Push server debug image to registry except on master
+  - docker build --pull -t $SERVER_DEBUG_IMG $TRAVIS_BUILD_DIR/server # Build server debug image
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_DEBUG_IMG"; fi # Push server debug image to registry except on master
 
 deploy:
   provider: script
