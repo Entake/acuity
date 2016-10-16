@@ -24,21 +24,21 @@ However for now, Node is the only option.
 
 ### Using Node
 
-Running the server using Node requires that you have Node.js v6 or later installed.
+Running the server using Node requires that you have Node.js v6 or later installed.  
 To run the server locally, do the following:  
-1. Clone this repository
-2. Enter the `./server` folder
-3. Install dependencies with `npm install`
-4. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)
-5. Start the server using `npm start`
-6. Navigate to [http://localhost:8080](http://localhost:8080) in your browser
+1. Clone this repository  
+2. Enter the `./server` folder  
+3. Install dependencies with `npm install`  
+4. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
+5. Start the server using `npm start`  
+6. Navigate to [http://localhost:8080](http://localhost:8080) in your browser  
 
 ## Development
 
 Development requires that you have Node.js v6 or later installed.  
 To run the server for development, just follow the instuctions from the [Using Node](#using-node) section.  
-To run the test suite simply execute `npm test`.
-To see all available commands, see package.json.
+To run the test suite simply execute `npm test`.  
+To see all available commands, see package.json.  
 
 ## Contributing
 
