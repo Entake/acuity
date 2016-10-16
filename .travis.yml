@@ -11,22 +11,28 @@ env:
   global:
     - ACUITY_SERVER_VERSION=0.1.0
     - SERVER_IMG=entake/acuity-server
-    - SERVER_TEST_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
+    - SERVER_DEBUG_IMAGE=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
-    - REPORT_COVERAGE=`bash <(curl -s https://codecov.io/env)`
+
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/server/node_modules
+    - $(npm config get prefix)/bin/yarn
 
 before_install:
-  - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+  - npm list -g yarn --depth=0 || npm install -g yarn
 
 install:
-  - docker build --pull -t $SERVER_TEST_IMG ./server
+  - cd $TRAVIS_BUILD_DIR/server && yarn
 
 script:
-  - docker run $SERVER_TEST_IMG npm run test-ci
+  - cd $TRAVIS_BUILD_DIR/server && npm run test-ci
 
 after_success:
-  - docker run $SERVER_TEST_IMG $REPORT_COVERAGE
-  - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_TEST_IMG"; fi
+  - cd $TRAVIS_BUILD_DIR/server && bash <(curl -s https://codecov.io/bash) # Report coverage to Codecov
+  - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD # Login to Docker Hub
+  - docker build --pull -t $SERVER_DEBUG_IMAGE $TRAVIS_BUILD_DIR/server # Build server debug image
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_DEBUG_IMAGE"; fi # Push server debug image to registry except on master
 
 deploy:
   provider: script
