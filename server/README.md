@@ -5,7 +5,7 @@
 <a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
 <a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License"></a>
 <a href="http://standardjs.com/"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style"></a>
-<a href='https://coveralls.io/github/Entake/acuity?branch='><img src='https://coveralls.io/repos/github/Entake/acuity/badge.svg?branch=' alt='Coverage Status' /></a>
+<a href="https://codecov.io/gh/Entake/acuity"><img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" /></a>
 <a href="https://david-dm.org/Entake/acuity?path=server" title="dependencies status"><img src="https://david-dm.org/Entake/acuity/status.svg?path=server"/></a>
 <a href="https://david-dm.org/Entake/acuity?path=server&type=dev" title="devDependencies status"><img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=server"/></a>
 </p>
