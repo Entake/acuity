@@ -36,7 +36,7 @@ after_success:
 
 deploy:
   provider: script
-  script: util/deploy.sh
+  script: $TRAVIS_BUILD_DIR/util/deploy.sh
   on:
     branch: master
 
