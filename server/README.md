@@ -14,7 +14,7 @@
 
 
 This is a REST API server, that provides CRUD capabilities, as well as user authentication, for the Acuity image sharing platform.
-The server is built using [Koa](http://koajs.com/) as the server backbone, and [Passport](http://passportjs.org/) as authentication middleware. The code is being compiled from ES2016+ by [Babel](https://babeljs.io/).
+The server is built using [Koa](http://koajs.com/) as the server backbone, and [Passport](http://passportjs.org/) as authentication middleware. The code is being compiled from ES2015+ by [Babel](https://babeljs.io/).
 It uses [RethinkDB](https://rethinkdb.com/) as the database, for storing data.
 
 ## Usage

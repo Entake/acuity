@@ -76,17 +76,6 @@
     "parser": "babel-eslint",
     "extends": [
       "standard"
-    ],
-    "rules": {
-      "no-multi-spaces": [
-        1,
-        {
-          "exceptions": {
-            "VariableDeclarator": true,
-            "ImportDeclaration": true
-          }
-        }
-      ]
-    }
+    ]
   }
 }
