@@ -1,0 +1,28 @@
+const Webpack = require('webpack')
+const WebpackConfig = require('./webpack.dev.config')
+const WebpackDevServer = require('webpack-dev-server')
+
+module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
+  historyApiFallback: true,
+  hot: true,
+  inline: true,
+  progress: true,
+  port: process.env.PORT || 3000,
+  stats: {
+    colors: true,
+    hash: false,
+    timings: true,
+    chunks: false,
+    chunkModules: false,
+    modules: false
+  },
+  proxy: {
+    '/api/*': {
+      target: 'http://localhost:8080'
+    }
+  }
+}).listen(3000, 'localhost', (err, res) => {
+  if (err) return console.warn(err)
+
+  console.log('🚧  Webpack development server listening at http://localhost:3000')
+})

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="dk">
+  <head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% if (htmlWebpackPlugin.options.css) { %>
+    <link href="style.css" rel="stylesheet"></link>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript" src="app.bundle.js"></script>
+  </body>
+</html>
