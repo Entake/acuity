@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:6.9.1
 
 # Install Yarn
 RUN npm i -g yarn
