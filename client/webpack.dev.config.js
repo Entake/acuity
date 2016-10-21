@@ -13,11 +13,17 @@ module.exports = {
 
   devtool: 'cheap-module-eval-source-map',
 
-  entry: './src/index.js',
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?https://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index.js'
+  ],
 
   output: {
     path: PATHS.public,
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
   },
 
   target: 'web',
@@ -33,10 +39,10 @@ module.exports = {
             ['es2015', { 'modules': false }],
             'stage-1',
             'react',
-            'react-hmre',
             'react-optimize'
           ],
           plugins: [
+            'react-hot-loader/babel',
             'react-html-attrs',
             'transform-runtime',
             'transform-class-properties',
@@ -55,6 +61,7 @@ module.exports = {
   plugins: [
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.NoErrorsPlugin(),
+    new Webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
       template: 'src/index.ejs',

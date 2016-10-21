@@ -11,4 +11,16 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+const render = () => {
+  ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+  )
+}
+
+render()
+
+// Hot Module Replacement - Needs to point to root component
+if (module.hot) {
+  module.hot.accept(App, render)
+}
