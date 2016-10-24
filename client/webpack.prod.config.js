@@ -65,7 +65,7 @@ module.exports = {
       inject: false,
       template: 'src/index.ejs',
       css: false,
-      title: Config.names.title + '(dev)'
+      title: Config.names.title
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/assets`, to: 'assets' }
