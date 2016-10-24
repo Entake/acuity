@@ -4,7 +4,7 @@
   "description": "Acuity React/Redux/Rx Frontend",
   "main": "index.js",
   "scripts": {
-    "test": "eslint src/",
+    "lint": "eslint src/",
     "dev": "parallelshell \"nodemon --watch ../server/src ../server/index\" \"npm start\"",
     "start": "node webpack-dev-server",
     "build": "webpack --optimize-minimize --config webpack.prod.config",
