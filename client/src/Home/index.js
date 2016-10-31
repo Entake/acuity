@@ -16,11 +16,14 @@ class Home extends PureComponent {
   }
 
   render () {
-    console.log(this.props.hello.get('world'))
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(this.props.hello.get('world'))
+    }
+
     return (
       <div>
-        <h1 class='test'>What up my glib globs!</h1>
-        <button type='button' class='success button' onClick={this.props.onClick}>
+        <h1 className='test'>What up my glib globs!</h1>
+        <button type='button' className='success button' onClick={this.props.onClick}>
           Press me!
         </button>
         <h2>Output: {this.props.hello.get('world')}</h2>

@@ -43,7 +43,6 @@ module.exports = {
             ],
             plugins: [
               'react-hot-loader/babel',
-              'react-html-attrs',
               'transform-runtime',
               'transform-class-properties',
               'transform-decorators-legacy'
@@ -77,6 +76,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: 'src/index.ejs',
+      xhtml: true,
       css: false,
       title: `${Config.html.title} (dev)`,
       themeColor: Config.html.themeColor

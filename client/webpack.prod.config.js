@@ -40,18 +40,10 @@ module.exports = {
                 'react-optimize'
               ],
               plugins: [
-                'react-hot-loader/babel',
-                'react-html-attrs',
                 'transform-runtime',
                 'transform-class-properties',
                 'transform-decorators-legacy'
               ]
-            }
-          },
-          {
-            loader: 'strip',
-            options: {
-              strip: ['console.log']
             }
           }
         ]
@@ -59,10 +51,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader'
+          fallbackLoader: 'style',
+          loader: 'css'
         })
-        // Use the new 'use' syntax when supported - see issue:
+        // TODO: Use the new 'use' syntax when supported - see issue:
         // https://github.com/webpack/extract-text-webpack-plugin/issues/275
         // use: ExtractTextPlugin.extract({
         //   fallbackLoader: 'style-loader',
@@ -92,6 +84,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: 'src/index.ejs',
+      xhtml: true,
       css: true,
       title: Config.html.title,
       description: Config.html.description,
@@ -99,8 +92,7 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: 'styles.css',
-      allChunks: true,
-      disabled: false
+      allChunks: true
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/assets`, to: 'assets' }
