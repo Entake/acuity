@@ -1,7 +1,7 @@
 // Import libraries
 import 'rxjs'
+import React from 'react'
 import { Provider } from 'react-redux'
-import React, { Component } from 'react'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
@@ -11,14 +11,19 @@ import 'foundation-sites/dist/foundation.min.css'
 // Our modules
 import store from 'store'
 import Container from 'shared/Container'
+import PureComponent from 'shared/PureComponent'
 
 // Our pages
 import Home from 'Home'
 
 // Create enhanced history
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store, {
+  selectLocationState (state) {
+    return state.get('routing').toJS()
+  }
+})
 
-export default class App extends Component {
+export default class App extends PureComponent {
   render () {
     return (
       <Provider store={store}>
