@@ -1,25 +1,25 @@
 // Libraries
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
-import { AppContainer as HMRContainer } from 'react-hot-loader'
+import { AppContainer } from 'react-hot-loader'
 
+// Our modules
 import App from 'App'
 
+// Create render function
 const render = () => {
   ReactDOM.render(
-    <HMRContainer>
-      <Router history={browserHistory}>
-        <Route path='/' component={App} />
-      </Router>
-    </HMRContainer>,
+    <AppContainer>
+      <App />
+    </AppContainer>,
     document.getElementById('app')
   )
 }
 
+// Do initial render
 render()
 
 // Hot Module Replacement - Needs to point to root component
 if (module.hot) {
-  module.hot.accept(Router, render)
+  module.hot.accept(App, render)
 }

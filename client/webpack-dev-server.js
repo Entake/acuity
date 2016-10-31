@@ -7,7 +7,7 @@ module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
   hot: true,
   inline: true,
   progress: true,
-  https: true,
+  https: true, // Can be set to true, for testing HTTP/2
   clientLogLevel: 'none',
   content: '/public',
   publicPath: '/',
@@ -22,7 +22,7 @@ module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
   },
   proxy: {
     '/api/*': {
-      target: 'http://localhost:8080'
+      target: 'https://localhost:8080'
     }
   }
 }).listen(3000, 'localhost', (err, res) => {

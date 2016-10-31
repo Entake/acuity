@@ -3,6 +3,7 @@ const Config = require('./config')
 const Webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PATHS = {
   src: Path.join(__dirname, 'src'),
@@ -24,32 +25,50 @@ module.exports = {
   target: 'web',
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: [
-            ['es2015', { 'modules': false }],
-            'stage-1',
-            'react',
-            'react-optimize'
-          ],
-          plugins: [
-            'react-html-attrs',
-            'transform-runtime',
-            'transform-class-properties',
-            'transform-decorators-legacy'
-          ]
-        }
+        use: [{
+          loader: 'babel',
+          options: {
+            presets: [
+              ['es2015', { 'modules': false }],
+              'stage-1',
+              'react',
+              'react-optimize'
+            ],
+            plugins: [
+              'react-hot-loader/babel',
+              'react-html-attrs',
+              'transform-runtime',
+              'transform-class-properties',
+              'transform-decorators-legacy'
+            ]
+          }
+        }]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          // loader: ExtractTextPlugin.extract({
+          //   loader: 'css-loader',
+          //   fallbackLoader: 'style-loader'
+          // })
+          {
+            loader: 'style'
+          },
+          {
+            loader: 'css'
+          }
+        ]
       }
     ]
   },
 
   resolve: {
     modules: ['node_modules', 'src'],
-    extensions: ['.js']
+    extensions: ['.js', '.css']
   },
 
   plugins: [
@@ -60,13 +79,23 @@ module.exports = {
       'Promise': 'es6-promise',
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
+    new Webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
     new Webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
       template: 'src/index.ejs',
-      css: false,
-      title: Config.names.title
+      css: true,
+      title: Config.html.title,
+      description: Config.html.description,
+      themeColor: Config.html.themeColor
     }),
+    // new ExtractTextPlugin({
+    //   filename: 'styles.css',
+    //   allChunks: true,
+    //   disabled: false
+    // }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/assets`, to: 'assets' }
     ])

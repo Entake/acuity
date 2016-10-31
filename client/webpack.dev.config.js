@@ -29,33 +29,45 @@ module.exports = {
   target: 'web',
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: [
-            ['es2015', { 'modules': false }],
-            'stage-1',
-            'react',
-            'react-optimize'
-          ],
-          plugins: [
-            'react-hot-loader/babel',
-            'react-html-attrs',
-            'transform-runtime',
-            'transform-class-properties',
-            'transform-decorators-legacy'
-          ]
-        }
+        use: [{
+          loader: 'babel',
+          options: {
+            presets: [
+              ['es2015', { 'modules': false }],
+              'stage-1',
+              'react'
+            ],
+            plugins: [
+              'react-hot-loader/babel',
+              'react-html-attrs',
+              'transform-runtime',
+              'transform-class-properties',
+              'transform-decorators-legacy'
+            ]
+          }
+        }]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style'
+          },
+          {
+            loader: 'css'
+          }
+        ]
       }
     ]
   },
 
   resolve: {
     modules: ['node_modules', 'src'],
-    extensions: ['.js']
+    extensions: ['.js', '.css']
   },
 
   plugins: [
@@ -66,11 +78,15 @@ module.exports = {
       inject: false,
       template: 'src/index.ejs',
       css: false,
-      title: `${Config.names.title} (dev)`
+      title: `${Config.html.title} (dev)`,
+      themeColor: Config.html.themeColor
     }),
     new Webpack.ProvidePlugin({
       'Promise': 'es6-promise',
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
+    new Webpack.LoaderOptionsPlugin({
+      debug: true
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/assets`, to: 'assets' }

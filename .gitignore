@@ -2,6 +2,7 @@ node_modules/
 server/db/
 .nyc_output/
 coverage/
+public/
 
 npm-debug.log
 coverage.lcov
