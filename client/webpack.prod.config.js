@@ -29,24 +29,32 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'babel',
-          options: {
-            presets: [
-              ['es2015', { 'modules': false }],
-              'stage-1',
-              'react',
-              'react-optimize'
-            ],
-            plugins: [
-              'react-hot-loader/babel',
-              'react-html-attrs',
-              'transform-runtime',
-              'transform-class-properties',
-              'transform-decorators-legacy'
-            ]
+        use: [
+          {
+            loader: 'babel',
+            options: {
+              presets: [
+                ['es2015', { 'modules': false }],
+                'stage-1',
+                'react',
+                'react-optimize'
+              ],
+              plugins: [
+                'react-hot-loader/babel',
+                'react-html-attrs',
+                'transform-runtime',
+                'transform-class-properties',
+                'transform-decorators-legacy'
+              ]
+            }
+          },
+          {
+            loader: 'strip',
+            options: {
+              strip: ['console.log']
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.css$/,
