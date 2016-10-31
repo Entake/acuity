@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react'
 
 const Container = ({children}) => (
-  <div class='container'>
+  <div className='container'>
     {children}
   </div>
 )

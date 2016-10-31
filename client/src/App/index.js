@@ -1,7 +1,7 @@
 // Import libraries
 import 'rxjs'
-import React from 'react'
 import { Provider } from 'react-redux'
+import React, { PureComponent } from 'react'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
@@ -11,7 +11,6 @@ import 'foundation-sites/dist/foundation.min.css'
 // Our modules
 import store from 'store'
 import Container from 'shared/Container'
-import PureComponent from 'shared/PureComponent'
 
 // Our pages
 import Home from 'Home'
@@ -24,6 +23,11 @@ const history = syncHistoryWithStore(browserHistory, store, {
 })
 
 export default class App extends PureComponent {
+  // App component never needs to update
+  shouldComponentUpdate (nextProps, nextState) {
+    return false
+  }
+
   render () {
     return (
       <Provider store={store}>

@@ -1,10 +1,9 @@
 // Libraries
 import { connect } from 'react-redux'
-import React, { PropTypes } from 'react'
+import React, { PureComponent, PropTypes } from 'react'
 
 // Our actions
 import { helloWorldAction } from 'store/actions'
-import PureComponent from 'shared/PureComponent'
 
 // Our styles
 import './index.css'
