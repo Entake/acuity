@@ -27,7 +27,8 @@ Lots of info to come, star and watch us, so that you'll stay updated! :bowtie:
 CI and CD for all the subprojects is done using [Travis](https://travis-ci.org).
 
 ## Help and Discussion
-If you need help, feel free to create an issue, or visit the [Acuity Gitter channel](https://gitter.im/acuity-project/Lobby)! We are basically always available!
+If you need help, feel free to create an issue, or visit the [Acuity Gitter channel](https://gitter.im/acuity-project/Lobby)!  
+We are basically always available and ready to help you out, or have a great discussion! :speech_balloon:  
 
 ## License
 
