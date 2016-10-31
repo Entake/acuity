@@ -3,7 +3,7 @@ const Config = require('./config')
 const Webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PATHS = {
   src: Path.join(__dirname, 'src'),
@@ -58,18 +58,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          // loader: ExtractTextPlugin.extract({
-          //   loader: 'css-loader',
-          //   fallbackLoader: 'style-loader'
-          // })
-          {
-            loader: 'style'
-          },
-          {
-            loader: 'css'
-          }
-        ]
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader'
+        })
+        // Use the new 'use' syntax when supported - see issue:
+        // https://github.com/webpack/extract-text-webpack-plugin/issues/275
+        // use: ExtractTextPlugin.extract({
+        //   fallbackLoader: 'style-loader',
+        //   loader: 'css-loader'
+        // })
       }
     ]
   },
@@ -99,11 +97,11 @@ module.exports = {
       description: Config.html.description,
       themeColor: Config.html.themeColor
     }),
-    // new ExtractTextPlugin({
-    //   filename: 'styles.css',
-    //   allChunks: true,
-    //   disabled: false
-    // }),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      allChunks: true,
+      disabled: false
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/assets`, to: 'assets' }
     ])
