@@ -1,15 +1,31 @@
-<p align="center"><a href="https://thatimagetagging.site"><img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" /></a></p>
+<p align="center">
+    <a href="https://thatimagetagging.site">
+        <img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" />
+    </a>
+</p>
 <h3 align="center">Acuity</h3>
 <p align="center">Free open-source image sharing platform with automagical image tagging</p>
 <p align="center">
-<a href="https://gitter.im/acuity-project/Lobby"><img src="https://img.shields.io/gitter/room/entake/acuity.svg" /></a>
-<a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status" /></a>
-<a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a>
-<a href="https://codecov.io/gh/Entake/acuity"><img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" /></a>
+    <a href="https://gitter.im/acuity-project/Lobby">
+        <img src="https://img.shields.io/gitter/room/entake/acuity.svg" />
+    </a>
+    <a href="https://travis-ci.org/Entake/acuity">
+        <img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status" />
+    </a>
+    <a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" />
+    </a>
+    <a href="https://codecov.io/gh/Entake/acuity">
+        <img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" />
+    </a>
 </p>
 <p align="center">
-<img src="http://dockeri.co/image/entake/acuity-server" />
-<img src="http://dockeri.co/image/entake/acuity-client" />
+    <a href="https://hub.docker.com/r/entake/acuity-server/">
+        <img src="http://dockeri.co/image/entake/acuity-server" />
+    </a>
+    <a href="https://hub.docker.com/r/entake/acuity-client/">
+        <img src="http://dockeri.co/image/entake/acuity-client" />
+    </a>
 </p>
 
 ---

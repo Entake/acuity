@@ -1,14 +1,32 @@
-<p align="center"><a href="https://thatimagetagging.site"><img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" /></a></p>
+<p align="center">
+    <a href="https://thatimagetagging.site">
+        <img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" />
+    </a>
+</p>
 <h3 align="center">Acuity Server</h3>
 <p align="center">Backend API for the Acuity project</p>
 <p align="center">
-<a href="https://gitter.im/acuity-project/Lobby"><img src="https://img.shields.io/gitter/room/entake/acuity.svg"></img></a>
-<a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
-<a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License"></a>
-<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style"></a>
-<a href="https://codecov.io/gh/Entake/acuity"><img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" /></a>
-<a href="https://david-dm.org/Entake/acuity?path=server" title="dependencies status"><img src="https://david-dm.org/Entake/acuity/status.svg?path=server"/></a>
-<a href="https://david-dm.org/Entake/acuity?path=server&type=dev" title="devDependencies status"><img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=server"/></a>
+    <a href="https://gitter.im/acuity-project/Lobby">
+        <img src="https://img.shields.io/gitter/room/entake/acuity.svg">
+    </a>
+    <a href="https://travis-ci.org/Entake/acuity">
+        <img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE">
+        <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License">
+    </a>
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style">
+    </a>
+    <a href="https://codecov.io/gh/Entake/acuity">
+        <img src="https://codecov.io/gh/Entake/acuity/branch/master/graph/badge.svg" alt="Codecov" />
+    </a>
+    <a href="https://david-dm.org/Entake/acuity?path=server" title="dependencies status">
+        <img src="https://david-dm.org/Entake/acuity/status.svg?path=server"/>
+    </a>
+    <a href="https://david-dm.org/Entake/acuity?path=server&type=dev" title="devDependencies status">
+        <img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=server"/>
+    </a>
 </p>
 
 ---

@@ -9,8 +9,8 @@ node_js:
 
 env:
   global:
-    - ACUITY_SERVER_VERSION=0.1.0
-    - ACUITY_CLIENT_VERSION=0.1.0
+    - ACUITY_SERVER_VERSION=0.2.0
+    - ACUITY_CLIENT_VERSION=0.2.0
     - SERVER_DEBUG_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION-debug
     - SERVER_RELEASE_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION
     - CLIENT_DEBUG_IMG=entake/acuity-client:$ACUITY_CLIENT_VERSION-debug
