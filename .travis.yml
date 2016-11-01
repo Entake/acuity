@@ -5,14 +5,16 @@ services:
 
 language: node_js
 node_js:
-  - "6"
+  - "6.9.1"
 
 env:
   global:
     - ACUITY_SERVER_VERSION=0.1.0
-    - SERVER_IMG=entake/acuity-server
-    - SERVER_DEBUG_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION-debug
-    - SERVER_RELEASE_IMG=$SERVER_IMG:$ACUITY_SERVER_VERSION
+    - ACUITY_CLIENT_VERSION=0.1.0
+    - SERVER_DEBUG_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION-debug
+    - SERVER_RELEASE_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION
+    - CLIENT_DEBUG_IMG=entake/acuity-client:$ACUITY_CLIENT_VERSION-debug
+    - CLIENT_RELEASE_IMG=entake/acuity-client:$ACUITY_CLIENT_VERSION
 
 cache:
   directories:
@@ -24,15 +26,20 @@ before_install:
 
 install:
   - cd $TRAVIS_BUILD_DIR/server && yarn
+  - cd $TRAVIS_BUILD_DIR/client && yarn
 
 script:
-  - cd $TRAVIS_BUILD_DIR/server && npm run test-ci
+  - cd $TRAVIS_BUILD_DIR/server && npm run test-ci && npm run lint
+  - cd $TRAVIS_BUILD_DIR/client && npm run lint
 
 after_success:
   - cd $TRAVIS_BUILD_DIR/server && bash <(curl -s https://codecov.io/bash) # Report coverage to Codecov
   - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD # Login to Docker Hub
-  - docker build --pull -t $SERVER_DEBUG_IMG $TRAVIS_BUILD_DIR/server # Build server debug image
+  - docker build -t $SERVER_DEBUG_IMG $TRAVIS_BUILD_DIR/server # Build server debug image
+  - cd $TRAVIS_BUILD_DIR/client && npm run build # TEMP - Builds client bundle
+  - docker build -t $CLIENT_DEBUG_IMG $TRAVIS_BUILD_DIR/client # Build client debug image
   - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_DEBUG_IMG"; fi # Push server debug image to registry except on master
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$CLIENT_DEBUG_IMG"; fi # Push client debug image to registry except on master
 
 deploy:
   provider: script
@@ -42,3 +49,9 @@ deploy:
 
 notifications:
   email: false
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/0f7b075e8d4317a32d00
+    on_success: change
+    on_failure: always
+    on_start: never
