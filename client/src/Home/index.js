@@ -5,6 +5,10 @@ import React, { PureComponent, PropTypes } from 'react'
 // Our actions
 import { helloWorldAction } from 'store/actions'
 
+// Our components
+import LayoutContainer from 'shared/LayoutComponent'
+import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
+import RightContainer from 'shared/LayoutComponent/RightSideComponent'
 // Our styles
 import './index.css'
 
@@ -21,11 +25,20 @@ class Home extends PureComponent {
 
     return (
       <div>
-        <h1 className='test'>What up my glib globs!</h1>
-        <button type='button' className='success button' onClick={this.props.onClick}>
-          Press me!
-        </button>
-        <h2>Output: {this.props.hello.get('world')}</h2>
+        <LayoutContainer>
+          <LeftContainer>
+            <div>
+              <h1 className='test'>What up my glib globs!</h1>
+              <button type='button' className='success button' onClick={this.props.onClick}>
+                Press me!
+              </button>
+              <h2>Output: {this.props.hello.get('world')}</h2>
+            </div>
+          </LeftContainer>
+          <RightContainer>
+            <h1>Test</h1>
+          </RightContainer>
+        </LayoutContainer>
       </div>
     )
   }

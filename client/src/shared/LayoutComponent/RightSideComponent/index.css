@@ -1,0 +1,11 @@
+.rightContainer {
+  position: absolute;
+  float: right;
+  padding-top: 64px;
+  margin-left: 29vw;
+  width: 69vw;
+  height: 100%;
+}
+.contentRight {
+
+}

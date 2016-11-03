@@ -1,0 +1,12 @@
+.leftContainer {
+  position: absolute;
+  height: 100%;
+  float: left;
+  width: 29vw;
+  padding-top: 32px;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.15);
+}
+.contentLeft{
+  
+}
