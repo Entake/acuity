@@ -7,10 +7,10 @@ import { Link } from 'react-router'
 import './index.css'
 
 const ClickableImageComponent = (props) => {
-  const imageSource = props.src
-  const gridSize = `${props.gridSize}`
-  const imageText = props.imageText
   const textPlacement = props.textPlacement
+  const imageText = props.imageText
+  const gridSize = props.gridSize
+  const imageSource = props.src
   const style = props.style
 
   return (
@@ -28,10 +28,10 @@ const ClickableImageComponent = (props) => {
 }
 
 ClickableImageComponent.propTypes = {
-  src: PropTypes.string.isRequired,
   gridSize: PropTypes.string.isRequired,
-  imageText: PropTypes.string,
+  src: PropTypes.string.isRequired,
   textPlacement: PropTypes.object,
+  imageText: PropTypes.string,
   style: PropTypes.object
 }
 

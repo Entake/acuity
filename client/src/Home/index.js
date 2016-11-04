@@ -9,6 +9,9 @@ import { helloWorldAction } from 'store/actions'
 import LayoutContainer from 'shared/LayoutComponent'
 import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
 import RightContainer from 'shared/LayoutComponent/RightSideComponent'
+import Button from 'shared/ButtonComponent'
+import UploadButton from 'shared/UploadButtonComponent'
+
 // Our styles
 import './index.css'
 
@@ -27,16 +30,42 @@ class Home extends PureComponent {
       <div>
         <LayoutContainer>
           <LeftContainer>
-            <div>
+            <div className='row'>
+              <a href='http://imgur.com'>
+                <Button
+                  backgroundColor='#c62828'
+                  color='white' height='48px'
+                  gridSize='small-3 medium-3 large-3 columns'
+                  text='Latest'
+                />
+              </a>
+              <a href='http://imgur.com'>
+                <Button
+                  backgroundColor='#d84315'
+                  color='white' height='48px'
+                  gridSize='small-3 medium-3 large-3 columns'
+                  text='Popular'
+                />
+              </a>
+              <a href='http://imgur.com'>
+                <Button
+                  backgroundColor='#00695c'
+                  color='white' height='48px'
+                  gridSize='small-3 medium-3 large-3 columns'
+                  text='Random'
+                />
+              </a>
+            </div>
+            {/* <div>
               <h1 className='test'>What up my glib globs!</h1>
               <button type='button' className='success button' onClick={this.props.onClick}>
                 Press me!
               </button>
               <h2>Output: {this.props.hello.get('world')}</h2>
-            </div>
+            </div> */}
           </LeftContainer>
           <RightContainer>
-            <h1>Test</h1>
+            <UploadButton text='Upload' />
           </RightContainer>
         </LayoutContainer>
       </div>
