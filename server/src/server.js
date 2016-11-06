@@ -2,22 +2,22 @@
 import Koa from 'koa'
 import Cors from 'kcors'
 import Router from 'koa-router'
-import Parser from 'koa-bodyparser'
 import Morgan from 'koa-morgan'
 import Convert from 'koa-convert'
-import Session from 'koa-generic-session'
+import Parser from 'koa-bodyparser'
 import Passport from 'koa-passport'
+import Session from 'koa-generic-session'
 
 // Our modules
+import setupUploadRoutes from './upload'
 import { logger } from './util'
-import { auth as authConfig } from '../config'
 import setupAuthRoutes from './auth'
+import { auth as authConfig } from '../config'
 
 export default function Server () {
   // Setup app
   const app = new Koa()
   const router = new Router()
-  // TODO: Find out if this is the session secret, or wtf it's used for
   app.keys = [authConfig.sessionSecret]
 
   // Setup logging
@@ -30,8 +30,8 @@ export default function Server () {
   router.get('/', ctx => {
     ctx.body = 'I\'m mr. Meeseeks!'
   })
-
   setupAuthRoutes(router)
+  setupUploadRoutes(router)
 
   // Setup middlewares
   app.use(Cors())
