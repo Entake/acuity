@@ -1,5 +1,6 @@
 // Libraries
 import Koa from 'koa'
+import Path from 'path'
 import Cors from 'kcors'
 import Router from 'koa-router'
 import Morgan from 'koa-morgan'
@@ -9,8 +10,8 @@ import Passport from 'koa-passport'
 import Session from 'koa-generic-session'
 
 // Our modules
-import setupUploadRoutes from './upload'
-import { logger } from './util'
+import setupUploadRoutes from './image'
+import { logger, createFolder } from './util'
 import setupAuthRoutes from './auth'
 import { auth as authConfig } from '../config'
 
@@ -19,6 +20,11 @@ export default function Server () {
   const app = new Koa()
   const router = new Router()
   app.keys = [authConfig.sessionSecret]
+
+  // Create needed folder structure
+  createFolder(Path.join(__dirname, '..', 'uploads'))
+  createFolder(Path.join(__dirname, '..', 'uploads', 'thumb'))
+  createFolder(Path.join(__dirname, '..', 'uploads', 'source'))
 
   // Setup logging
   app.use(Morgan(
