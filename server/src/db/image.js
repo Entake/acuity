@@ -13,7 +13,7 @@ export const Image = thinky.createModel('Image', {
   imgPath: thinky.type.string().required(),
   thumbPath: thinky.type.string().required(),
 
-  views: thinky.type.number().required(),
+  views: thinky.type.number().required().default(0),
   tags: thinky.type.array().schema(
     thinky.type.string().required()
   ).default([]),

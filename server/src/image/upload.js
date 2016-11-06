@@ -1,13 +1,15 @@
 // Libraries
 import { promisify } from 'bluebird'
-import passport from 'passport'
+import Passport from 'passport'
 import Multer from 'koa-multer'
+import sizeOf from 'image-size'
 import Sharp from 'sharp'
 import Path from 'path'
 import UUID from 'uuid'
 import FS from 'fs'
 
 // Our modules
+import { Image } from '../db'
 import { logger } from '../util'
 import fileFilter from './fileFilter'
 
@@ -28,19 +30,30 @@ const upload = new Multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 10485760, // 10MB
+    fileSize: 10000000, // 10MB
     files: 1
   }
 })
 
 export default router => {
-  router.post('/api/upload', passport.authenticate('jwt', { session: false }), upload.single('image'), async (ctx, next) => {
+  router.post('/api/upload', Passport.authenticate('jwt', { session: false }), upload.single('image'), async (ctx, next) => {
     const srcImg = ctx.req.file
+
+    // Get user input
+    const { title, description } = ctx.req.body
 
     // If image is rejected, stop upload process
     if (!srcImg) {
       logger.info('Image rejected')
       ctx.status = 400
+      ctx.body = { error: 'Image does not fit the requirements' }
+      return
+    }
+
+    // Make sure title is not empty
+    if (!title || !title.length) {
+      ctx.status = 400
+      ctx.body = { error: 'Title is required' }
       return
     }
 
@@ -50,6 +63,8 @@ export default router => {
       if (err) {
         logger.error(err)
         ctx.status = 500 // Return with Internal Server Error
+        ctx.body = { error: 'Failed while saving source file' }
+        return
       }
     })
 
@@ -64,8 +79,33 @@ export default router => {
         if (err) {
           logger.error(err)
           ctx.status = 500 // Return with Internal Server Error
+          ctx.body = { error: 'Failed while generating thumbnail' }
+          return
         }
       })
+
+    // Create db entry
+    const dimensions = sizeOf(srcFile)
+    const entry = {
+      title: title,
+      description: description,
+
+      size: srcImg.size,
+      height: dimensions.height,
+      width: dimensions.width,
+
+      imgPath: srcFile,
+      thumbPath: thumbFile,
+
+      owner: ctx.req.user.id
+    }
+
+    // Remove description if user did not supply it
+    if (!description || !description.length) delete entry.description
+
+    // Save image in db
+    const image = new Image(entry)
+    await image.save()
 
     // OK (successful)
     ctx.status = 200

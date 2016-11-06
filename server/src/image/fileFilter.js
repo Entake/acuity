@@ -1,13 +1,8 @@
 // Libraries
 import Path from 'path'
 
+// Filter image types
 export default (req, file, cb) => {
-  if (!req.user) {
-    cb(null, false) // Reject if not logged in
-    return
-  }
-
-  // Filter image types
   switch (Path.extname(file.originalname)) {
     case '.jpg':
     case '.jpeg':
