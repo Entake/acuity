@@ -10,8 +10,8 @@ export const Image = thinky.createModel('Image', {
   height: thinky.type.number().required(),
   width: thinky.type.number().required(),
 
-  imgPath: thinky.type.string().required(),
-  thumbPath: thinky.type.string().required(),
+  img: thinky.type.string().required(),
+  thumb: thinky.type.string().required(),
 
   views: thinky.type.number().required().default(0),
   tags: thinky.type.array().schema(

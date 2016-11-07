@@ -44,9 +44,11 @@ export default router => {
 
     // If image is rejected, stop upload process
     if (!srcImg) {
-      logger.info('Image rejected')
+      logger.info('No image received')
       ctx.status = 400
-      ctx.body = { error: 'Image does not fit the requirements' }
+      ctx.body = {
+        error: 'Error when receiving image, maybe the image doesn\'t fit the requirements?'
+      }
       return
     }
 
@@ -58,8 +60,8 @@ export default router => {
     }
 
     // Save source image
-    const srcFile = `${PATHS.srcDest}/acuity-source-${UUID.v4()}${Path.extname(srcImg.originalname)}`
-    await writeFile(srcFile, Buffer.from(srcImg.buffer), (err) => {
+    const srcFile = `acuity-source-${UUID.v4()}${Path.extname(srcImg.originalname)}`
+    await writeFile(`${PATHS.srcDest}/${srcFile}`, Buffer.from(srcImg.buffer), (err) => {
       if (err) {
         logger.error(err)
         ctx.status = 500 // Return with Internal Server Error
@@ -69,13 +71,13 @@ export default router => {
     })
 
     // Create thumbnail
-    const thumbFile = `${PATHS.thumbDest}/acuity-thumb-${UUID.v4()}.jpeg`
+    const thumbFile = `acuity-thumb-${UUID.v4()}.jpeg`
     await Sharp(Buffer.from(srcImg.buffer))
       .resize(300, 200)
       .background('white') // TODO: Decide what to do when images don't fit the aspect ratio
       .embed()
       .jpeg()
-      .toFile(thumbFile, (err, info) => {
+      .toFile(`${PATHS.thumbDest}/${thumbFile}`, (err, info) => {
         if (err) {
           logger.error(err)
           ctx.status = 500 // Return with Internal Server Error
@@ -85,7 +87,7 @@ export default router => {
       })
 
     // Create db entry
-    const dimensions = sizeOf(srcFile)
+    const dimensions = sizeOf(`${PATHS.srcDest}/${srcFile}`)
     const entry = {
       title: title,
       description: description,
@@ -94,8 +96,8 @@ export default router => {
       height: dimensions.height,
       width: dimensions.width,
 
-      imgPath: srcFile,
-      thumbPath: thumbFile,
+      img: srcFile,
+      thumb: thumbFile,
 
       owner: ctx.req.user.id
     }
