@@ -47,10 +47,12 @@ Running the server using Node requires that you have Node.js v6 or later install
 To run the server locally, do the following:  
 1. Clone this repository  
 2. Enter the `./server` folder  
-3. Install dependencies with `npm install` or `yarn`  
-4. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
-5. Start the server using `npm start`  
-6. Navigate to [http://localhost:8080](http://localhost:8080) in your browser  
+3. Install dependencies with `npm install` or `yarn`
+4. Place [Google Vision API](https://cloud.google.com/vision/docs/common/auth) `key.json` file in `./server` folder  
+   Keep in mind that the `key.json` file is mentioned in the projects `.gitignore` so that you don't leak API credentials 
+5. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
+6. Start the server using `npm start`  
+7. Start sending API requests on [http://localhost:8080](http://localhost:8080)  
 
 ## Development
 
@@ -72,7 +74,7 @@ For larger new features: Do everything as above, but first also make contact wit
 
 ## Help and Discussion
 If you need help, feel free to create an issue, or visit the [Acuity Gitter channel](https://gitter.im/acuity-project/Lobby)!  
-We are basically always available and ready to help you out, or have a great discussion! :speech_balloon:  
+We are always available and ready to help you out, or have a great discussion! :speech_balloon:  
 
 ## License
 
