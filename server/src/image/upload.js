@@ -10,7 +10,7 @@ import FS from 'fs'
 
 // Our modules
 import { Image } from '../db'
-import { logger } from '../util'
+import { logger, getLabels } from '../util'
 import fileFilter from './fileFilter'
 
 // Define storage paths
@@ -86,6 +86,12 @@ export default router => {
         }
       })
 
+    // Get image labels from GVision
+    const labels = await getLabels(Buffer.from(srcImg.buffer))
+
+    // Convert object response to array
+    const labelsArray = Array.from(labels)
+
     // Create db entry
     const dimensions = sizeOf(`${PATHS.srcDest}/${srcFile}`)
     const entry = {
@@ -99,11 +105,16 @@ export default router => {
       img: srcFile,
       thumb: thumbFile,
 
+      tags: labelsArray,
+
       owner: ctx.req.user.id
     }
 
     // Remove description if user did not supply it
     if (!description || !description.length) delete entry.description
+
+    // Remove tags if GVision didn't return any
+    if (!labelsArray || !labelsArray.length) delete entry.tags
 
     // Save image in db
     const image = new Image(entry)

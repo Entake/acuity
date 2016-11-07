@@ -50,6 +50,7 @@
     "tape": "^4.6.2"
   },
   "dependencies": {
+    "@google-cloud/vision": "^0.5.0",
     "bluebird": "^3.4.6",
     "image-size": "^0.5.0",
     "jsonwebtoken": "^7.1.9",
