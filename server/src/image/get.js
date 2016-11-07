@@ -13,7 +13,7 @@ const imgDir = Path.join(__dirname, '..', '..', 'uploads', 'source')
 
 export default router => {
   router.get('/api/get/thumb/:id', asyncRequest(async (ctx, next) => {
-    const { id } = ctx.request.ctx.params
+    const { id } = ctx.params
 
     // Get image from db
     const image = await Image.get(id)
@@ -24,7 +24,7 @@ export default router => {
   }))
 
   router.get('/api/get/image/:id', asyncRequest(async (ctx, next) => {
-    const { id } = ctx.request.ctx.params
+    const { id } = ctx.params
 
     // Get image from db
     const image = await Image.get(id)
