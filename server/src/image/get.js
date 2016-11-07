@@ -15,6 +15,12 @@ export default router => {
   router.get('/api/get/thumb/:id', asyncRequest(async (ctx, next) => {
     const { id } = ctx.params
 
+    if (!id) {
+      ctx.status = 400
+      ctx.body = 'Error: did not receive valid Image ID'
+      return
+    }
+
     // Get image from db
     const image = await Image.get(id)
     const thumb = `${thumbDir}/${image.thumb}`
@@ -25,6 +31,12 @@ export default router => {
 
   router.get('/api/get/image/:id', asyncRequest(async (ctx, next) => {
     const { id } = ctx.params
+
+    if (!id) {
+      ctx.status = 400
+      ctx.body = 'Error: did not receive valid Image ID'
+      return
+    }
 
     // Get image from db
     const image = await Image.get(id)
