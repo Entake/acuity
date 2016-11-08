@@ -30,7 +30,6 @@ const upload = new Multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 10000000, // 10MB
     files: 1
   }
 })
@@ -38,6 +37,13 @@ const upload = new Multer({
 export default router => {
   router.post('/api/upload', Passport.authenticate('jwt', { session: false }), upload.single('image'), async (ctx, next) => {
     const srcImg = ctx.req.file
+
+    // Check file size is >= 4MB
+    if (srcImg.size > 4194304) {
+      ctx.status = 400
+      ctx.body = { error: 'File is bigger than 4MB' }
+      return
+    }
 
     // Get user input
     const { title, description } = ctx.req.body
