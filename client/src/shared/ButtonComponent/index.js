@@ -13,24 +13,26 @@ const Button = (props) => {
   const cb = props.onClick
 
   return (
-    <div className={gridSize}>
-      <button
-        className='button'
-        style={{color: color, height: height, backgroundColor: bgColor}}
-        onClick={cb}>
-          {buttonText}
-      </button>
+    <div className='buttonContainer'>
+      <div className={gridSize}>
+        <button
+          className='button'
+          style={{color: color, height: height, backgroundColor: bgColor}}
+          onClick={cb}>
+            {buttonText}
+        </button>
+      </div>
     </div>
   )
 }
 
 Button.propTypes = {
   gridSize: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string,
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.object,
+  backgroundColor: PropTypes.string,
+  height: PropTypes.string,
   color: PropTypes.string,
+  onClick: PropTypes.object,
 }
 
 export default Button

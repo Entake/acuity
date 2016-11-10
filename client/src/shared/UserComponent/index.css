@@ -1,0 +1,28 @@
+.user {
+    max-width: 75rem;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    padding-bottom: 96px;
+}
+.user .columns {
+    display: inline-block;
+}
+.user .avatar {
+    float: left;
+}
+.user .username {
+    float: left;
+    padding-left: 0.65em;
+}
+.user img {
+    height: 64px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.user h4 {
+    color: rgba(255, 255, 255, 0.87);
+}
+.user h6 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: -2em;
+}

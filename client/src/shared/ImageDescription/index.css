@@ -1,0 +1,28 @@
+.imageTitleDescription {
+  padding-bottom: 32px;
+}
+.imageTitleDescription h4 {
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+}
+.imageTitleDescription h6 {
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 1.5;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+}
+.title {
+  height: 44px;
+}
+.description {
+  height: calc(100vh - 432px - 64px - 24px - 64px - 32px);
+  /* This code is based upon the same as in ImageTextInput
+    At some point someone should account for the lack of a
+    submit button. This would improve scalability
+  */
+  min-height: 44px;
+}

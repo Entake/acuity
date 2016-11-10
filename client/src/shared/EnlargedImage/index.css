@@ -1,0 +1,32 @@
+.enlargedImage {
+    position: relative;
+    float: right;
+    margin-top: calc((100vh - 64px - (95vh - 64px)) / 2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 69vw;
+    height: calc(100vh - 64px);
+}
+.enlargedImage img {
+    position: relative;
+    display: block;
+    margin: auto;
+    max-height: calc(95vh - 64px);
+    width: auto;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.enlargedImage img:hover {
+    transition:
+        box-shadow 0.2s ease;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+@media only screen and (max-width: 1448.276px) {
+  .enlargedImage {
+    margin-top: 50%;
+    max-width: calc(100vw - 420px);
+  }
+  .enlargedImage img {
+    max-width: calc((100vw - 420px) * 0.9);
+    height: auto;
+  }
+}

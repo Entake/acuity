@@ -11,6 +11,12 @@ import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
 import RightContainer from 'shared/LayoutComponent/RightSideComponent'
 import Button from 'shared/ButtonComponent'
 import UploadButton from 'shared/UploadButtonComponent'
+import Footer from 'shared/FooterComponent'
+import SearchBar from 'shared/SearchBarComponent'
+import User from 'shared/UserComponent'
+import ImageInput from 'shared/ImageTextInputComponent'
+import ImageDescription from 'shared/ImageDescription'
+import EnlargedImage from 'shared/EnlargedImage'
 
 // Our styles
 import './index.css'
@@ -31,31 +37,43 @@ class Home extends PureComponent {
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
+              <User userName='Aksel N. Ladegaard' userProfile='' quote='A Reactive Engineer'/>
+              <SearchBar />
               <a href='http://imgur.com'>
                 <Button
                   backgroundColor='#c62828'
-                  color='white' height='48px'
-                  gridSize='small-3 medium-3 large-3 columns'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-4 columns'
                   text='Latest'
                 />
               </a>
               <a href='http://imgur.com'>
                 <Button
                   backgroundColor='#d84315'
-                  color='white' height='48px'
-                  gridSize='small-3 medium-3 large-3 columns'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-4 columns'
                   text='Popular'
                 />
               </a>
               <a href='http://imgur.com'>
                 <Button
                   backgroundColor='#00695c'
-                  color='white' height='48px'
-                  gridSize='small-3 medium-3 large-3 columns'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-4 columns'
+                  text='Random'
+                />
+              </a>
+              <a href='http://imgur.com'>
+                <Button
+                  backgroundColor='#00695c'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-12 columns'
                   text='Random'
                 />
               </a>
             </div>
+            {/*<ImageInput /> */}
+            <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
             {/* <div>
               <h1 className='test'>What up my glib globs!</h1>
               <button type='button' className='success button' onClick={this.props.onClick}>
@@ -63,11 +81,20 @@ class Home extends PureComponent {
               </button>
               <h2>Output: {this.props.hello.get('world')}</h2>
             </div> */}
+            <Button
+              background-color='purple'
+              color='white' height=''
+              gridSize='small-12 medium-12 large-12 columns'
+              text='Submit'
+            />
           </LeftContainer>
           <RightContainer>
-            <UploadButton text='Upload' />
+            <EnlargedImage src='assets/swainSmall.jpg' />
+            {/* <UploadButton text='Upload' /> */}
+            {/* I reccommend that you use the UploadBUtton Text part to communicate with hte user concerning upload failure/success */}
           </RightContainer>
         </LayoutContainer>
+        <Footer />
       </div>
     )
   }

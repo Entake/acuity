@@ -1,11 +1,19 @@
 .rightContainer {
   position: absolute;
   float: right;
-  padding-top: 64px;
+  /*padding-top: 64px;*/
   margin-left: 29vw;
-  width: 69vw;
+  /*width: 69vw;*/
+  width: 71vw;
   height: 100%;
 }
 .contentRight {
 
+}
+
+@media only screen and (max-width: 1448.276px) {
+  .rightContainer {
+    width: calc(100vw - 420px);
+    margin-left: 420px;
+  }
 }

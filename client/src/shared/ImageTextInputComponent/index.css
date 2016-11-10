@@ -1,0 +1,46 @@
+.input {
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 20px;
+  text-align: left;
+  word-spacing: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  resize: none;
+  border: none;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.input:hover {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: rgba(255, 255, 255, 0.33);
+}
+.input:focus {
+  transition:
+    box-shadow 0.3s ease,
+    background-position 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    height 0.3s ease;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-position: calc(100% - 12px) 20px;
+  background-color: white;
+  color: black;
+}
+.title {
+    height: 44px;
+}
+.description {
+    height: calc(100vh - 432px - 64px - 24px - 64px - 32px); /* This part of the site is currently only functional to 660px in height */
+    min-height: 44px;
+}

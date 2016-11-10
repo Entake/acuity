@@ -5,10 +5,9 @@ import React, { PropTypes } from 'react'
 import './index.css'
 
 const Footer = (props) => {
-  const footerCSS = props.footerCSS
 
   return (
-    <section className='footer' style={footerCSS}>
+    <section className='footer'>
       <div className='footerContainer'>
         <div className='row'>
           <div className='small-12 medium-6 large-3 columns'>
@@ -110,7 +109,6 @@ const Footer = (props) => {
 }
 
 Footer.propTypes = {
-  footerCSS: PropTypes.string
 
 }
 

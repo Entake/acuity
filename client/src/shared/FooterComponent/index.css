@@ -1,8 +1,13 @@
 .footer {
-  background-color: #333333;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 64px;
+  bottom: 0;
+  /*background-color: #333333;*/
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   box-shadow: inset 0px 2px 8px 0px rgba(0,0,0,0.4)
-
 }
 .footerContainer {
   padding-top: 1em;
@@ -31,7 +36,7 @@
 }
 .footer a:hover {
   transition:
-    color, ease, 1s;
+    color, ease, 0s;
   line-height: 2;
   color: white !important;
 }
