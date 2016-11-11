@@ -10,15 +10,18 @@ import LayoutContainer from 'shared/LayoutComponent'
 import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
 import RightContainer from 'shared/LayoutComponent/RightSideComponent'
 import Button from 'shared/ButtonComponent'
+import UploadButton from 'shared/UploadButtonComponent'
 import Footer from 'shared/FooterComponent'
 import SearchBar from 'shared/SearchBarComponent'
 import User from 'shared/UserComponent'
-import AcuityImage from 'shared/AcuityImageComponent'
+import ImageInput from 'shared/ImageTextInputComponent'
+import ImageDescription from 'shared/ImageDescription'
+import EnlargedImage from 'shared/EnlargedImage'
 
 // Our styles
 import './index.css'
 
-class Home extends PureComponent {
+class Login extends PureComponent {
   static propTypes = {
     hello: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired
@@ -34,7 +37,7 @@ class Home extends PureComponent {
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
-              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
+              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer'/>
               <SearchBar />
               <a href='http://imgur.com'>
                 <Button
@@ -60,53 +63,35 @@ class Home extends PureComponent {
                   text='Random'
                 />
               </a>
-              <a href='browse'>
+              <a href='http://imgur.com'>
                 <Button
                   backgroundColor='#00695c'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
-                  text='browse'
+                  text='Random'
                 />
               </a>
             </div>
-            <a href='upload'>
-              <Button
-                background-color='purple'
-                color='white' height=''
-                gridSize='small-12 medium-12 large-12 columns'
-                text='Upload Image'
-              />
-            </a>
+            {/*<ImageInput /> */}
+            <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
+            {/* <div>
+              <h1 className='test'>What up my glib globs!</h1>
+              <button type='button' className='success button' onClick={this.props.onClick}>
+                Press me!
+              </button>
+              <h2>Output: {this.props.hello.get('world')}</h2>
+            </div> */}
+            <Button
+              background-color='purple'
+              color='white' height=''
+              gridSize='small-12 medium-12 large-12 columns'
+              text='Submit'
+            />
           </LeftContainer>
           <RightContainer>
-            <div className='row'>
-              <div className='small-12 medium-12 large-12 columns'>
-                <div className='AcuityDescription'>
-                  <div className='spinningUnicorn'>
-                    <img src='assets/favicon.ico' />
-                  </div>
-                </div>
-                <div className='small-12 medium-12 large-12 columns'>
-                  <div className='AcuityDescriptionText'>
-                    <h4>Hey this is acuity, this will just take up some space or something</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* This section is popular images or something along those lines, grid sizing will be changed later
-                The sidebar should be changed to acocunt for some other things on the landing page, this is however not
-                top priority right now.
-              */}
-            <div className='row'>
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-            </div>
+            <EnlargedImage src='assets/swainSmall.jpg' />
+            {/* <UploadButton text='Upload' /> */}
+            {/* I reccommend that you use the UploadBUtton Text part to communicate with hte user concerning upload failure/success */}
           </RightContainer>
         </LayoutContainer>
         <Footer />
@@ -123,4 +108,4 @@ const mapDispatchToProps = (dispatch) => ({
   onClick: () => dispatch(helloWorldAction)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

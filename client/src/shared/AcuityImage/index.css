@@ -1,0 +1,22 @@
+.image {
+  position: relative;
+}
+.image img {
+  position: relative;
+}
+.imageTextCss {
+  position: relative;
+  color: white;
+  font-size: 32px;
+  padding-left: 32px;
+  margin-left: 32px;
+  width: 42%;
+  border-radius: 5%;
+  /*background: rgba(0,0,0,0);*/
+  /*box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.1);*/
+}
+
+.clickableImageCss {
+  height: 256px;
+  margin-bottom: 1.4em;
+}

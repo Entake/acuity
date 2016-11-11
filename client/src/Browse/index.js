@@ -18,7 +18,7 @@ import AcuityImage from 'shared/AcuityImageComponent'
 // Our styles
 import './index.css'
 
-class Home extends PureComponent {
+class Browse extends PureComponent {
   static propTypes = {
     hello: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired
@@ -34,7 +34,7 @@ class Home extends PureComponent {
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
-              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
+              <User userName='Aksel N. Ladegaard' userProfile='UserProfile' quote='A Reactive Engineer' />
               <SearchBar />
               <a href='http://imgur.com'>
                 <Button
@@ -60,53 +60,35 @@ class Home extends PureComponent {
                   text='Random'
                 />
               </a>
-              <a href='browse'>
+              <a href='http://imgur.com'>
                 <Button
                   backgroundColor='#00695c'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
-                  text='browse'
+                  text='Random'
                 />
               </a>
             </div>
-            <a href='upload'>
-              <Button
-                background-color='purple'
-                color='white' height=''
-                gridSize='small-12 medium-12 large-12 columns'
-                text='Upload Image'
-              />
-            </a>
+            <Button
+              background-color='purple'
+              color='white' height=''
+              gridSize='small-12 medium-12 large-12 columns'
+              text='Submit'
+            />
           </LeftContainer>
           <RightContainer>
-            <div className='row'>
-              <div className='small-12 medium-12 large-12 columns'>
-                <div className='AcuityDescription'>
-                  <div className='spinningUnicorn'>
-                    <img src='assets/favicon.ico' />
-                  </div>
-                </div>
-                <div className='small-12 medium-12 large-12 columns'>
-                  <div className='AcuityDescriptionText'>
-                    <h4>Hey this is acuity, this will just take up some space or something</h4>
-                  </div>
-                </div>
+            <section className='searchResults'>
+              <div className='row'>
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
               </div>
-            </div>
-            {/* This section is popular images or something along those lines, grid sizing will be changed later
-                The sidebar should be changed to acocunt for some other things on the landing page, this is however not
-                top priority right now.
-              */}
-            <div className='row'>
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-            </div>
+            </section>
           </RightContainer>
         </LayoutContainer>
         <Footer />
@@ -123,4 +105,4 @@ const mapDispatchToProps = (dispatch) => ({
   onClick: () => dispatch(helloWorldAction)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Browse)

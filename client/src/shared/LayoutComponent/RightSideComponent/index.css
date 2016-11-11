@@ -1,11 +1,12 @@
 .rightContainer {
-  position: absolute;
+  position: static;
   float: right;
   /*padding-top: 64px;*/
   margin-left: 29vw;
   /*width: 69vw;*/
   width: 71vw;
   height: 100%;
+  overflow-y: scroll;
 }
 .contentRight {
 

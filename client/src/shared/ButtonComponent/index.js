@@ -19,7 +19,7 @@ const Button = (props) => {
           className='button'
           style={{color: color, height: height, backgroundColor: bgColor}}
           onClick={cb}>
-            {buttonText}
+          {buttonText}
         </button>
       </div>
     </div>
@@ -32,7 +32,7 @@ Button.propTypes = {
   backgroundColor: PropTypes.string,
   height: PropTypes.string,
   color: PropTypes.string,
-  onClick: PropTypes.object,
+  onClick: PropTypes.object
 }
 
 export default Button
