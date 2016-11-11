@@ -9,3 +9,16 @@ body {
   background: aqua;
   background: radial-gradient(ellipse at center, rgba(69,90,100,1) 0%, rgba(38,50,56,1) 100%);
 }
+h1 {
+  color: white;
+  padding-bottom: 16px;
+}
+.loginSection {
+  margin-top: 128px;
+}
+.loginButton{
+  background-color: green;
+  color: white;
+  width: 100%;
+  height: 44px;
+}

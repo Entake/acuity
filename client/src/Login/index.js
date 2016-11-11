@@ -7,16 +7,7 @@ import { helloWorldAction } from 'store/actions'
 
 // Our components
 import LayoutContainer from 'shared/LayoutComponent'
-import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
-import RightContainer from 'shared/LayoutComponent/RightSideComponent'
-import Button from 'shared/ButtonComponent'
-import UploadButton from 'shared/UploadButtonComponent'
 import Footer from 'shared/FooterComponent'
-import SearchBar from 'shared/SearchBarComponent'
-import User from 'shared/UserComponent'
-import ImageInput from 'shared/ImageTextInputComponent'
-import ImageDescription from 'shared/ImageDescription'
-import EnlargedImage from 'shared/EnlargedImage'
 
 // Our styles
 import './index.css'
@@ -35,64 +26,38 @@ class Login extends PureComponent {
     return (
       <div>
         <LayoutContainer>
-          <LeftContainer>
+          <section className='loginSection'>
             <div className='row'>
-              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer'/>
-              <SearchBar />
-              <a href='http://imgur.com'>
-                <Button
-                  backgroundColor='#c62828'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Latest'
-                />
-              </a>
-              <a href='http://imgur.com'>
-                <Button
-                  backgroundColor='#d84315'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Popular'
-                />
-              </a>
-              <a href='http://imgur.com'>
-                <Button
-                  backgroundColor='#00695c'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Random'
-                />
-              </a>
-              <a href='http://imgur.com'>
-                <Button
-                  backgroundColor='#00695c'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-12 columns'
-                  text='Random'
-                />
-              </a>
+              <div className='small-12 medium-8 large-6 large-offset-3 columns'>
+                <h1> Login </h1>
+                <div className='login'>
+                  <form className='loginForm'>
+                    <input
+                      type='text'
+                      className='input title'
+                      input='text'
+                      name='username'
+                      placeholder='Username'
+                      maxLength=''
+                      // value=''
+                      required
+                      />
+                    <input
+                      className='input title'
+                      type='password'
+                      input='password'
+                      name='password'
+                      placeholder='password'
+                      maxLength=''
+                      // value=''
+                      required
+                      />
+                    <button className='loginButton' type='submit'>Login</button>
+                  </form>
+                </div>
+              </div>
             </div>
-            {/*<ImageInput /> */}
-            <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
-            {/* <div>
-              <h1 className='test'>What up my glib globs!</h1>
-              <button type='button' className='success button' onClick={this.props.onClick}>
-                Press me!
-              </button>
-              <h2>Output: {this.props.hello.get('world')}</h2>
-            </div> */}
-            <Button
-              background-color='purple'
-              color='white' height=''
-              gridSize='small-12 medium-12 large-12 columns'
-              text='Submit'
-            />
-          </LeftContainer>
-          <RightContainer>
-            <EnlargedImage src='assets/swainSmall.jpg' />
-            {/* <UploadButton text='Upload' /> */}
-            {/* I reccommend that you use the UploadBUtton Text part to communicate with hte user concerning upload failure/success */}
-          </RightContainer>
+          </section>
         </LayoutContainer>
         <Footer />
       </div>
