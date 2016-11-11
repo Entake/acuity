@@ -7,13 +7,19 @@
   float: left;
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.15);
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
 }
 .contentLeft{
 
 }
+@media only screen and (max-width: 40em) {
+  .leftContainer {
+    height: calc(100vh - 64px);
+    overflow-y: scroll;
+  }
+}
 
-@media only screen and (max-height: 660px) {
+@media only screen and (max-height: 786px) {
   .leftContainer {
     height: calc(100vh - 64px);
     overflow-y: scroll;

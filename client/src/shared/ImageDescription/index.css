@@ -26,3 +26,14 @@
   */
   min-height: 44px;
 }
+
+@media only screen and (max-width: 90em) {
+    /* 80px times the amount of buttons, 4 * 80 = 320 + 72px for the searchbar
+      +96 for the user + 44 for the image title. + 32 for the padding in the top.
+      Finally in this undone example I've included the height of the submit button 80px
+     */
+  .description {
+    height: calc(100vh - 710px - 32px); /*breaks at 786px */
+    min-height: 44px;
+  }
+}

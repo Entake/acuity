@@ -22,7 +22,7 @@
 }
 @media only screen and (max-width: 1448.276px) {
   .enlargedImage {
-    margin-top: 50%;
+    /*margin-top: 50%;*/
     max-width: calc(100vw - 420px);
   }
   .enlargedImage img {
