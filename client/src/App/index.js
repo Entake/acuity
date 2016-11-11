@@ -10,7 +10,7 @@ import 'foundation-sites/dist/foundation.min.css'
 
 // Our modules
 import store from 'store'
-import Container from 'shared/Container'
+import Navbar from 'shared/Navbar'
 
 // Our pages
 import Home from 'Home'
@@ -38,7 +38,7 @@ export default class App extends PureComponent {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <Route path='/' component={Container}>
+          <Route path='/' component={Navbar}>
             <IndexRoute component={Home} />
             <Route path='browse' component={Browse} />
             <Route path='upload' component={Upload} />
