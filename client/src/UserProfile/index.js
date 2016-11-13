@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import React, { PureComponent, PropTypes } from 'react'
 
 // Our actions
-import { helloWorldAction } from 'store/actions'
 
 // Our components
 import LayoutContainer from 'shared/LayoutComponent'
@@ -28,10 +27,6 @@ class UserProfile extends PureComponent {
   }
 
   render () {
-    if (process.env.NODE_ENV !== 'production') {
-      console.log(this.props.hello.get('world'))
-    }
-
     return (
       <div>
         <LayoutContainer>
@@ -91,11 +86,9 @@ class UserProfile extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  hello: state.get('hello')
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onClick: () => dispatch(helloWorldAction)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile)

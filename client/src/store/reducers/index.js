@@ -1,7 +1,7 @@
-import helloReducer from './helloReducer'
-import routerReducer from './routerReducer'
+import router from './router'
+import auth from './auth'
 
 export default {
-  helloReducer,
-  routerReducer
+  auth,
+  router
 }

@@ -1,5 +1,6 @@
-import { helloWorld } from './helloworld'
+import { register, login } from './auth'
 
 export default [
-  helloWorld
+  register,
+  login
 ]

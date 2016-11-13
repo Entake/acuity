@@ -22,7 +22,7 @@ module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
   },
   proxy: {
     '/api/*': {
-      target: 'https://localhost:8080'
+      target: 'http://localhost:8080'
     }
   }
 }).listen(3000, 'localhost', (err, res) => {

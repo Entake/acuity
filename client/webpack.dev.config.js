@@ -11,7 +11,7 @@ const PATHS = {
 
 module.exports = {
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
 
   entry: [
     'react-hot-loader/patch',
