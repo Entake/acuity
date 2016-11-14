@@ -1,5 +1,5 @@
 // Libraries
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
 
 // Our components
 import LayoutContainer from 'shared/LayoutComponent'
@@ -26,7 +26,7 @@ class Home extends PureComponent {
             <div className='row'>
               <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
               <SearchBar />
-              <a href='http://imgur.com'>
+              <a href='browseImage'>
                 <Button
                   backgroundColor='#c62828'
                   color='white' height=''
@@ -34,7 +34,7 @@ class Home extends PureComponent {
                   text='Latest'
                 />
               </a>
-              <a href='http://imgur.com'>
+              <a href='browseImage'>
                 <Button
                   backgroundColor='#d84315'
                   color='white' height=''
@@ -42,7 +42,7 @@ class Home extends PureComponent {
                   text='Popular'
                 />
               </a>
-              <a href='http://imgur.com'>
+              <a href='browseImage'>
                 <Button
                   backgroundColor='#00695c'
                   color='white' height=''
