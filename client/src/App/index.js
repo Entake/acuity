@@ -11,6 +11,7 @@ import 'foundation-sites/dist/foundation.min.css'
 // Our modules
 import store from 'store'
 import Navbar from 'shared/Navbar'
+import { requireAuth } from 'util'
 
 // Our pages
 import Home from 'Home'
@@ -24,7 +25,7 @@ import EnlargedImage from 'EnlargedImage'
 // Create enhanced history
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState (state) {
-    return state.get('routing').toJS()
+    return state.get('router').toJS()
   }
 })
 
@@ -41,7 +42,7 @@ export default class App extends PureComponent {
           <Route path='/' component={Navbar}>
             <IndexRoute component={Home} />
             <Route path='browse' component={Browse} />
-            <Route path='upload' component={Upload} />
+            <Route path='upload' component={Upload} onEnter={requireAuth} />
             <Route path='login' component={Login} />
             <Route path='register' component={Register} />
             <Route path='user' component={UserProfile} />

@@ -56,32 +56,25 @@ export default class Navbar extends PureComponent {
             <ul className='header-right-links'>
               <NavbarButton
                 to='/'
-                title=''
-                pressedButton={this.state.pressedNavButton}
-              />
-              <NavbarButton
-                to='/about'
-                title='Om os'
+                title='Home'
                 pressedButton={this.state.pressedNavButton}
               />
               <NavbarButton
                 to='/login'
                 title='Login'
+                type='extern'
                 pressedButton={this.state.pressedNavButton}
               />
               <NavbarButton
                 to='/register'
                 title='Register'
+                type='extern'
                 pressedButton={this.state.pressedNavButton}
               />
               <NavbarButton
-                to='/Lande'
-                title='Lande'
-                pressedButton={this.state.pressedNavButton}
-              />
-              <NavbarButton
-                to='/FAQ'
-                title='FAQ'
+                to='/upload'
+                title='Upload'
+                type='intern'
                 pressedButton={this.state.pressedNavButton}
               />
             </ul>
