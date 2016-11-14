@@ -15,12 +15,22 @@ const Button = (props) => {
   return (
     <div className='buttonContainer'>
       <div className={gridSize}>
-        <button
-          className='button'
-          style={{color: color, height: height, backgroundColor: bgColor}}
-          onClick={cb}>
-          {buttonText}
-        </button>
+        { props.disabled ? (
+          <button
+            className='button'
+            style={{color: color, height: height, backgroundColor: bgColor}}
+            onClick={cb}
+            disabled>
+            {buttonText}
+          </button>
+        ) : (
+          <button
+            className='button'
+            style={{color: color, height: height, backgroundColor: bgColor}}
+            onClick={cb}>
+            {buttonText}
+          </button>
+        )}
       </div>
     </div>
   )
@@ -32,7 +42,8 @@ Button.propTypes = {
   backgroundColor: PropTypes.string,
   height: PropTypes.string,
   color: PropTypes.string,
-  onClick: PropTypes.object
+  onClick: PropTypes.object,
+  disabled: PropTypes.boolean
 }
 
 export default Button
