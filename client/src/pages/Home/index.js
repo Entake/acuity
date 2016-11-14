@@ -55,18 +55,18 @@ class Home extends PureComponent {
                   backgroundColor='#00695c'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
-                  text='browse'
+                  text='Browse'
+                />
+              </a>
+              <a href='upload'>
+                <Button
+                  background-color='purple'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-12 columns'
+                  text='Upload Image'
                 />
               </a>
             </div>
-            <a href='upload'>
-              <Button
-                background-color='purple'
-                color='white' height=''
-                gridSize='small-12 medium-12 large-12 columns'
-                text='Upload Image'
-              />
-            </a>
           </LeftContainer>
           <RightContainer>
             <div className='row'>

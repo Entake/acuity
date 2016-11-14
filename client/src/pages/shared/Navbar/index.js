@@ -50,7 +50,7 @@ export default class Navbar extends PureComponent {
           </button>
           <div className='navbar-container'>
             <ul className='header-left-links'>
-              <img src='assets/vector/idex_logo.svg' />
+              <img src='assets/favicon.ico' />
               <Link to='/'><li>Idex, Danmark</li></Link>
             </ul>
             <ul className='header-right-links'>
