@@ -64,14 +64,14 @@ class Upload extends PureComponent {
                   text='???'
                 />
               </a>
+              <ImageInput />
+              <Button
+                background-color='purple'
+                color='white' height=''
+                gridSize='small-12 medium-12 large-12 columns'
+                text='Submit'
+              />
             </div>
-            <ImageInput />
-            <Button
-              background-color='purple'
-              color='white' height=''
-              gridSize='small-12 medium-12 large-12 columns'
-              text='Submit'
-            />
           </LeftContainer>
           <RightContainer>
             <UploadButton text='Upload' />

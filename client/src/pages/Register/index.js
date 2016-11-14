@@ -8,7 +8,7 @@ import { registerAction } from 'store/actions'
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
 import Footer from 'pages/shared/FooterComponent'
-import { registerErrorToMessage } from 'util'
+import { registerErrorToMessage } from '../../util'
 
 // Our styles
 import './index.css'

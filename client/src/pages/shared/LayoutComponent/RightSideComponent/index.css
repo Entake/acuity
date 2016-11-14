@@ -5,11 +5,11 @@
   margin-left: 29vw;
   /*width: 69vw;*/
   width: 71vw;
-  height: 100%;
+  height: calc(100vh - 64px);
   overflow-y: scroll;
 }
 .contentRight {
-
+  height: 100%;
 }
 
 @media only screen and (max-width: 90em) {

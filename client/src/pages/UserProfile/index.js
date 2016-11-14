@@ -66,14 +66,14 @@ class UserProfile extends PureComponent {
                   text='Random'
                 />
               </a>
+              <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
+              <Button
+                background-color='purple'
+                color='white' height=''
+                gridSize='small-12 medium-12 large-12 columns'
+                text='Submit'
+              />
             </div>
-            <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
-            <Button
-              background-color='purple'
-              color='white' height=''
-              gridSize='small-12 medium-12 large-12 columns'
-              text='Submit'
-            />
           </LeftContainer>
           <RightContainer>
             <EnlargedImage src='assets/swainSmall.jpg' />

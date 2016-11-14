@@ -60,13 +60,13 @@ class Browse extends PureComponent {
                   text='Random'
                 />
               </a>
+              <Button
+                background-color='purple'
+                color='white' height=''
+                gridSize='small-12 medium-12 large-12 columns'
+                text='Submit'
+              />
             </div>
-            <Button
-              background-color='purple'
-              color='white' height=''
-              gridSize='small-12 medium-12 large-12 columns'
-              text='Submit'
-            />
           </LeftContainer>
           <RightContainer>
             <section className='searchResults'>

@@ -60,7 +60,7 @@ class Home extends PureComponent {
               </a>
               <a href='upload'>
                 <Button
-                  background-color='purple'
+                  backgroundColor='var(--disabled)'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Upload Image'

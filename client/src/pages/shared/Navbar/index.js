@@ -45,9 +45,9 @@ export default class Navbar extends PureComponent {
     return (
       <div>
         <nav id='header' className='header'>
-          <button className='hamburger_menu'>
+          {/* <button className='hamburger_menu'>
             <img src='assets/vector/hamburger_menu.svg' />
-          </button>
+          </button> */}
           <div className='navbar-container'>
             <ul className='header-left-links'>
               <img src='assets/favicon.ico' />

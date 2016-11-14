@@ -26,7 +26,7 @@
 }
 
 .header-left-links {
-  font-family: 'Roboto Mono', monospace;
+  font-family: sans-serif;
   font-size: 22px;
   list-style: none;
   display: -webkit-inline-box;
@@ -73,7 +73,7 @@
 }
 
 .header-right-links {
-  font-family: 'Roboto Mono', monospace;
+  font-family: sans-serif;
   font-size: 16px;
   list-style: none;
   display: -webkit-inline-box;
@@ -118,7 +118,7 @@
   color: rgba(255, 255, 255, 0.86);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 64em) {
   .header-right-links {
     display: none;
   }
@@ -154,7 +154,7 @@
 
 }
 
-@media (min-width: 751px) {
+@media (min-width: 64.063em) {
   .header__menu-toggle {
     display: none;
   }
@@ -165,7 +165,7 @@
   }
 }
 
-@media (max-width: 775px) {
+@media (max-width: 64em) {
   .header-left-links a {
     padding-left: 1vw;
     padding-right: 1vw;

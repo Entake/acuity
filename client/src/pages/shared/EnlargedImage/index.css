@@ -20,13 +20,18 @@
         box-shadow 0.2s ease;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-@media only screen and (max-width: 1448.276px) {
+@media only screen and (max-width: 90em) {
   .enlargedImage {
     /*margin-top: 50%;*/
-    max-width: calc(100vw - 420px);
+    margin-top: calc((100vh - 64px - (95vh - 64px)) / 2);
+    margin-left: 420px;
+    margin-bottom: auto;
+    height: 100%;
+    width: 100%;
   }
   .enlargedImage img {
-    max-width: calc((100vw - 420px) * 0.9);
-    height: auto;
+    float: none;
+    max-height: calc((100vh - 64px) * 0.85);
+    max-width: calc((100vw - 420px) * 0.85);
   }
-}
+  }
