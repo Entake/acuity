@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 
 // Our modules
-import App from 'App'
+import App from 'app'
 
 // Create render function
 const render = () => {

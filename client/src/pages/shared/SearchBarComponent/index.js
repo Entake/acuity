@@ -9,7 +9,7 @@ const SearchBar = (props) => {
 
   return (
     <div className='small-12 medium-12 large-12 columns'>
-      <input input='text' className='searchbar' name='Searchbar' placeholder='Search auto tagged images' value={searchValue} />
+      <input className='searchbar' name='Searchbar' placeholder='Search auto tagged images' value={searchValue} />
     </div>
   )
 }

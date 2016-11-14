@@ -10,17 +10,17 @@ import 'foundation-sites/dist/foundation.min.css'
 
 // Our modules
 import store from 'store'
-import Navbar from 'shared/Navbar'
+import Navbar from 'pages/shared/Navbar'
 import { requireAuth } from 'util'
 
 // Our pages
-import Home from 'Home'
-import Browse from 'Browse'
-import Upload from 'Upload'
-import Register from 'Register'
-import Login from 'Login'
-import UserProfile from 'UserProfile'
-import EnlargedImage from 'EnlargedImage'
+import Home from 'pages/Home'
+import Browse from 'pages/Browse'
+import Upload from 'pages/Upload'
+import Register from 'pages/Register'
+import Login from 'pages/Login'
+import UserProfile from 'pages/UserProfile'
+import EnlargedImage from 'pages/EnlargedImage'
 
 // Create enhanced history
 const history = syncHistoryWithStore(browserHistory, store, {

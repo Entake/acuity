@@ -2,14 +2,14 @@
 import React, { PureComponent, PropTypes } from 'react'
 
 // Our components
-import LayoutContainer from 'shared/LayoutComponent'
-import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
-import RightContainer from 'shared/LayoutComponent/RightSideComponent'
-import Button from 'shared/ButtonComponent'
-import Footer from 'shared/FooterComponent'
-import SearchBar from 'shared/SearchBarComponent'
-import User from 'shared/UserComponent'
-import AcuityImage from 'shared/AcuityImageComponent'
+import LayoutContainer from 'pages/shared/LayoutComponent'
+import LeftContainer from 'pages/shared/LayoutComponent/LeftSideComponent'
+import RightContainer from 'pages/shared/LayoutComponent/RightSideComponent'
+import Button from 'pages/shared/ButtonComponent'
+import Footer from 'pages/shared/FooterComponent'
+import SearchBar from 'pages/shared/SearchBarComponent'
+import User from 'pages/shared/UserComponent'
+import AcuityImage from 'pages/shared/AcuityImageComponent'
 
 // Our styles
 import './index.css'

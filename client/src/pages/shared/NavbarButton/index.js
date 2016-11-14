@@ -5,7 +5,7 @@ import React, { PropTypes, PureComponent } from 'react'
 import { Link } from 'react-router'
 
 // Utils
-import { isLoggedIn } from '../../util'
+import { isLoggedIn } from '../../../util'
 
 class NavbarButton extends PureComponent {
   constructor (props) {

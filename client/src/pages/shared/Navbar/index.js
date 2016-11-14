@@ -2,7 +2,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 
 // React Components
-import NavbarButton from 'shared/NavbarButton'
+import NavbarButton from 'pages/shared/NavbarButton'
 import { Link } from 'react-router'
 
 // Local styling

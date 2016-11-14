@@ -5,17 +5,17 @@ import React, { PureComponent, PropTypes } from 'react'
 // Our actions
 
 // Our components
-import LayoutContainer from 'shared/LayoutComponent'
-import LeftContainer from 'shared/LayoutComponent/LeftSideComponent'
-import RightContainer from 'shared/LayoutComponent/RightSideComponent'
-import Button from 'shared/ButtonComponent'
-import UploadButton from 'shared/UploadButtonComponent'
-import Footer from 'shared/FooterComponent'
-import SearchBar from 'shared/SearchBarComponent'
-import User from 'shared/UserComponent'
-import ImageInput from 'shared/ImageTextInputComponent'
-import ImageDescription from 'shared/ImageDescription'
-import EnlargedImage from 'shared/EnlargedImage'
+import LayoutContainer from 'pages/shared/LayoutComponent'
+import LeftContainer from 'pages/shared/LayoutComponent/LeftSideComponent'
+import RightContainer from 'pages/shared/LayoutComponent/RightSideComponent'
+import Button from 'pages/shared/ButtonComponent'
+import UploadButton from 'pages/shared/UploadButtonComponent'
+import Footer from 'pages/shared/FooterComponent'
+import SearchBar from 'pages/shared/SearchBarComponent'
+import User from 'pages/shared/UserComponent'
+import ImageInput from 'pages/shared/ImageTextInputComponent'
+import ImageDescription from 'pages/shared/ImageDescription'
+import EnlargedImage from 'pages/shared/EnlargedImage'
 
 // Our styles
 import './index.css'

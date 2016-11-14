@@ -6,8 +6,8 @@ import React, { PureComponent, PropTypes } from 'react'
 import { loginAction, redirectedToLoginAction } from 'store/actions'
 
 // Our components
-import LayoutContainer from 'shared/LayoutComponent'
-import Footer from 'shared/FooterComponent'
+import LayoutContainer from 'pages/shared/LayoutComponent'
+import Footer from 'pages/shared/FooterComponent'
 import { loginErrorToMessage } from 'util'
 
 // Our styles
