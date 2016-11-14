@@ -71,14 +71,18 @@ class Browse extends PureComponent {
           <RightContainer>
             <section className='searchResults'>
               <div className='row'>
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-                <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
+                <AcuityImage src='assets/swainSmall.jpg' href='browseImage' tag1='test' tag2='test' tag3='tag4' />
               </div>
             </section>
           </RightContainer>

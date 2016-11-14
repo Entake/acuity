@@ -26,7 +26,7 @@ class Home extends PureComponent {
             <div className='row'>
               <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
               <SearchBar />
-              <a href='browseImage'>
+              <a href='browse'>
                 <Button
                   backgroundColor='#673AB7'
                   color='white' height=''
@@ -93,14 +93,14 @@ class Home extends PureComponent {
                 top priority right now.
               */}
             <div className='row'>
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
-              <AcuityImage src='assets/swainSmall.jpg' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+              <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
             </div>
           </RightContainer>
         </LayoutContainer>

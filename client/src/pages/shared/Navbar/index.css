@@ -89,7 +89,7 @@
 
 .header-right-links a {
   height: 100%;
-  padding-top: 18px; /* 3/8 * (height-content height) */
+  padding-top: 20px; /* 3/8 * (height-content height) */
   padding-left: 2vw;
   padding-right: 2vw;
   color: rgba(255, 255, 255, 0.86);
