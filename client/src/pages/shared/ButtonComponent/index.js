@@ -43,7 +43,7 @@ Button.propTypes = {
   height: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.object,
-  disabled: PropTypes.boolean
+  disabled: PropTypes.bool
 }
 
 export default Button

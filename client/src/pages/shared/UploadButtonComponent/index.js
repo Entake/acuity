@@ -12,14 +12,14 @@ const UploadButton = (props) => {
     <button
       className='uploadButton'
       onClick={cb}>
-        {uploadButtonText}
+      {uploadButtonText}
     </button>
   )
 }
 
 UploadButton.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.object,
+  onClick: PropTypes.object
 }
 
 export default UploadButton

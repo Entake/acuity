@@ -60,10 +60,10 @@ class Home extends PureComponent {
               </a>
               <a href='upload'>
                 <Button
+                  backgroundColor='var(--disabled)'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Upload Image'
-                  disabled
                 />
               </a>
             </div>
@@ -79,7 +79,7 @@ class Home extends PureComponent {
               </div>
               <div className='small-12 medium-12 large-12 columns'>
                 <div className='AcuityDescriptionText'>
-                  <h4>Acuity is an automatic image tagging website. </h4>
+                  <h4>Acuity is the automatic open source image tagging website.</h4>
                 </div>
               </div>
             </div>

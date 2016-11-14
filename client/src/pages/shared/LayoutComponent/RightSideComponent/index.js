@@ -13,7 +13,10 @@ const RightContainer = ({children}) => (
 )
 
 RightContainer.propTypes = {
-  children: PropTypes.isRequired
+  children: React.PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]).isRequired
 }
 
 export default RightContainer

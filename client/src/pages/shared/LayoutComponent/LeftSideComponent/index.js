@@ -13,7 +13,10 @@ const LeftContainer = ({children}) => (
 )
 
 LeftContainer.propTypes = {
-  children: PropTypes.isRequired
+  children: React.PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]).isRequired
 }
 
 export default LeftContainer

@@ -15,7 +15,7 @@ const EnlargedImage = (props) => {
 }
 
 EnlargedImage.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
 }
 
 export default EnlargedImage

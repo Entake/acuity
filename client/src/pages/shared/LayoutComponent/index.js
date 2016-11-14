@@ -11,7 +11,10 @@ const LayoutContainer = ({children}) => (
 )
 
 LayoutContainer.propTypes = {
-  children: PropTypes.isRequired
+  children: React.PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]).isRequired
 }
 
 export default LayoutContainer

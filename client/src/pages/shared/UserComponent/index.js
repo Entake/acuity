@@ -13,11 +13,11 @@ const User = (props) => {
     <section className='user'>
       <a href={userProfile}>
         <div className='avatar'>
-            <img src='../assets/aksel.jpg' />
+          <img src='../assets/aksel.jpg' />
         </div>
         <div className='username'>
-            <h4>{userName}</h4><br />
-            <h6>{quote}</h6>
+          <h4>{userName}</h4><br />
+          <h6>{quote}</h6>
         </div>
       </a>
     </section>
@@ -27,7 +27,7 @@ const User = (props) => {
 User.propTypes = {
   userName: PropTypes.string.isRequired,
   userProfile: PropTypes.string,
-  quote: PropTypes.string,
+  quote: PropTypes.string
 }
 
 export default User

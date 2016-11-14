@@ -11,7 +11,7 @@ import 'foundation-sites/dist/foundation.min.css'
 // Our modules
 import store from 'store'
 import Navbar from 'pages/shared/Navbar'
-import { requireAuth } from 'util'
+import { requireAuth } from '../util'
 
 // Our pages
 import Home from 'pages/Home'
