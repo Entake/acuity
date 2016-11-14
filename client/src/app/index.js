@@ -11,16 +11,16 @@ import 'foundation-sites/dist/foundation.min.css'
 // Our modules
 import store from 'store'
 import Navbar from 'pages/shared/Navbar'
-import { requireAuth } from '../util'
+import { requireAuth, logout } from '../util'
 
 // Our pages
 import Home from 'pages/Home'
+import Login from 'pages/Login'
 import Browse from 'pages/Browse'
 import Upload from 'pages/Upload'
 import Register from 'pages/Register'
-import Login from 'pages/Login'
+import ViewImage from 'pages/ViewImage'
 import UserProfile from 'pages/UserProfile'
-import EnlargedImage from 'pages/EnlargedImage'
 import FourOhFour from 'pages/FourOhFour'
 
 // Create enhanced history
@@ -32,7 +32,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
 
 export default class App extends PureComponent {
   // App component never needs to update
-  shouldComponentUpdate (nextProps, nextState) {
+  shouldComponentUpdate () {
     return false
   }
 
@@ -43,11 +43,12 @@ export default class App extends PureComponent {
           <Route path='/' component={Navbar}>
             <IndexRoute component={Home} />
             <Route path='browse' component={Browse} />
+            <Route path='browse/:id' component={ViewImage} />
             <Route path='upload' component={Upload} onEnter={requireAuth} />
             <Route path='login' component={Login} />
+            <Route path='logout' onEnter={logout} />
             <Route path='register' component={Register} />
             <Route path='user' component={UserProfile} />
-            <Route path='browseImage' component={EnlargedImage} />
             <Route path='404' component={FourOhFour} />
           </Route>
         </Router>

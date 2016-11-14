@@ -47,6 +47,9 @@ class Register extends PureComponent {
       return
     }
 
+    // Check that passwords match
+    if (this.passwordInput.value !== this.passwordInputRepeat.value) return
+
     // Set all input fields to valid
     this.setState({
       usernameInvalid: false,
@@ -65,6 +68,11 @@ class Register extends PureComponent {
     !this.usernameInput.value ? this.setState({usernameInvalid: true}) : this.setState({usernameInvalid: false})
     !this.passwordInput.value ? this.setState({passwordInvalid: true}) : this.setState({passwordInvalid: false})
     !this.passwordInputRepeat.value ? this.setState({passwordRepeatInvalid: true}) : this.setState({passwordRepeatInvalid: false})
+
+    // Check that password fields are matching
+    ;(this.passwordInput.value !== this.passwordInputRepeat.value)
+    ? this.setState({passwordInvalid: true, passwordRepeatInvalid: true})
+    : this.setState({passwordInvalid: false, passwordRepeatInvalid: false})
   }
 
   componentDidUpdate = () => {

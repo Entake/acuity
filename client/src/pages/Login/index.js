@@ -54,7 +54,7 @@ class Login extends PureComponent {
     }
   }
 
-  componentWillUpdate = () => {
+  componentDidUpdate = () => {
     if (this.props.token) {
       setImmediate(this.context.router.push('/'))
     }

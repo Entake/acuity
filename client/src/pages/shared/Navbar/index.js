@@ -50,8 +50,8 @@ export default class Navbar extends PureComponent {
           </button> */}
           <div className='navbar-container'>
             <ul className='header-left-links'>
-              <img src='assets/favicon.ico' />
-              <Link to='/'><li>Idex, Danmark</li></Link>
+              <img src='/assets/favicon.ico' />
+              <Link to='/'><li>Acuity</li></Link>
             </ul>
             <ul className='header-right-links'>
               <NavbarButton
@@ -74,6 +74,12 @@ export default class Navbar extends PureComponent {
               <NavbarButton
                 to='/upload'
                 title='Upload'
+                type='intern'
+                pressedButton={this.state.pressedNavButton}
+              />
+              <NavbarButton
+                to='/logout'
+                title='Logout'
                 type='intern'
                 pressedButton={this.state.pressedNavButton}
               />

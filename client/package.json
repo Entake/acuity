@@ -77,7 +77,8 @@
       "react/no-unknown-property": 0
     },
     "globals": {
-      "localStorage": true
+      "localStorage": true,
+      "fetch": true
     }
   }
 }

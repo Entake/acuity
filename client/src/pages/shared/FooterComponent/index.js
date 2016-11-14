@@ -16,7 +16,7 @@ const Footer = (props) => {
             </div>
             <a href='https://github.com/Entake/acuity'>
               <div className='githubLogo'>
-                <img src='assets/githubSmall.png' />
+                <img src='/assets/githubSmall.png' />
               </div>
             </a>
           </div>
