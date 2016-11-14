@@ -28,7 +28,7 @@ class Home extends PureComponent {
               <SearchBar />
               <a href='browseImage'>
                 <Button
-                  backgroundColor='#c62828'
+                  backgroundColor='#673AB7'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Latest'
@@ -36,18 +36,20 @@ class Home extends PureComponent {
               </a>
               <a href='browseImage'>
                 <Button
-                  backgroundColor='#d84315'
+                  backgroundColor='#F44336'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Popular'
+                  disabled
                 />
               </a>
               <a href='browseImage'>
                 <Button
-                  backgroundColor='#00695c'
+                  backgroundColor='#CDDC39'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Random'
+                  disabled
                 />
               </a>
               <a href='browse'>
@@ -56,32 +58,33 @@ class Home extends PureComponent {
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Browse'
+                  disabled
                 />
               </a>
               <a href='upload'>
                 <Button
-                  backgroundColor='var(--disabled)'
+                  backgroundColor='#4CAF50'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Upload Image'
                 />
               </a>
+              <div className='small-12 medium-12 large-12 columns'>
+                <div className='acuityDescription'>
+                  <div className='spinningUnicorn'>
+                    <img src='assets/mascot.svg' />
+                  </div>
+                </div>
+              </div>
             </div>
           </LeftContainer>
           <RightContainer>
             <div className='row'>
-              <div className='small-12 medium-6 large-4 columns'>
-                <div className='acuityDescription'>
-                  <div className='spinningUnicorn'>
-                    <img src='assets/favicon.ico' />
-                  </div>
-                </div>
-              </div>
-              <div className='small-12 medium-6 large-8 columns'>
+              <div className='small-12 medium-8 medium-offset-2 large-6 large-offset-3 columns'>
                 <div className='acuityDescriptionText'>
-                  <h4>Acuity is the automatic open source image tagging website.
+                  <h5>Acuity is the automatic open source image tagging website.
                     <br />This site was developed using Google Vision API, all libaries and technologies are under their respective licenses, whilst our work is under the MIT license. #placeholderText
-                  </h4>
+                  </h5>
                 </div>
               </div>
             </div>

@@ -56,7 +56,11 @@
   margin-top: 2px;
   padding-left: 2vw;;
 }
-
+.header-left-links img:hover {
+  transition:
+    transform ease 1s;
+  transform: rotateX(360deg);
+}
 .header-left-links a:hover {
   -webkit-transition:
     background-color, 0.2s ease,
