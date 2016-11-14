@@ -16,6 +16,11 @@ h1 {
 .registerSection {
   margin-top: 128px;
 }
+.registerSection input {
+  background-color: rgba(255, 255, 255, 0.87);
+  border-bottom: none;
+  color: rgba(0, 0, 0, 0.8);
+}
 .registerButton{
   background-color: green;
   color: white;

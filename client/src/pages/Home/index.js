@@ -52,6 +52,14 @@ class Home extends PureComponent {
                   disabled
                 />
               </a>
+              <a href='upload'>
+                <Button
+                  backgroundColor='#4CAF50'
+                  color='white' height=''
+                  gridSize='small-12 medium-12 large-12 columns'
+                  text='Upload Image'
+                />
+              </a>
               <a href='browse'>
                 <Button
                   backgroundColor='#00695c'
@@ -59,14 +67,6 @@ class Home extends PureComponent {
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Browse'
                   disabled
-                />
-              </a>
-              <a href='upload'>
-                <Button
-                  backgroundColor='#4CAF50'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-12 columns'
-                  text='Upload Image'
                 />
               </a>
               <div className='small-12 medium-12 large-12 columns'>
