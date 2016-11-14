@@ -114,8 +114,8 @@
 }
 
 .navbarButtonPressed {
-  background-color: #dddddd;
-  color: rgba(255, 255, 255, 0.86);
+  background-color: red !important;
+  color: red;
 }
 
 @media (max-width: 64em) {

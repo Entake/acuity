@@ -70,16 +70,16 @@ class Home extends PureComponent {
           </LeftContainer>
           <RightContainer>
             <div className='row'>
-              <div className='small-12 medium-12 large-12 columns'>
+              <div className='small-12 medium-6 medium-offset-3 large-4 large-offset-5 columns'>
                 <div className='AcuityDescription'>
                   <div className='spinningUnicorn'>
                     <img src='assets/favicon.ico' />
                   </div>
                 </div>
-                <div className='small-12 medium-12 large-12 columns'>
-                  <div className='AcuityDescriptionText'>
-                    <h4>Hey this is acuity, this will just take up some space or something</h4>
-                  </div>
+              </div>
+              <div className='small-12 medium-12 large-12 columns'>
+                <div className='AcuityDescriptionText'>
+                  <h4>Acuity is an automatic image tagging website. </h4>
                 </div>
               </div>
             </div>
