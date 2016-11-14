@@ -70,16 +70,18 @@ class Home extends PureComponent {
           </LeftContainer>
           <RightContainer>
             <div className='row'>
-              <div className='small-12 medium-6 medium-offset-3 large-4 large-offset-5 columns'>
-                <div className='AcuityDescription'>
+              <div className='small-12 medium-6 large-4 columns'>
+                <div className='acuityDescription'>
                   <div className='spinningUnicorn'>
                     <img src='assets/favicon.ico' />
                   </div>
                 </div>
               </div>
-              <div className='small-12 medium-12 large-12 columns'>
-                <div className='AcuityDescriptionText'>
-                  <h4>Acuity is the automatic open source image tagging website.</h4>
+              <div className='small-12 medium-6 large-8 columns'>
+                <div className='acuityDescriptionText'>
+                  <h4>Acuity is the automatic open source image tagging website.
+                    <br />This site was developed using Google Vision API, all libaries and technologies are under their respective licenses, whilst our work is under the MIT license. #placeholderText
+                  </h4>
                 </div>
               </div>
             </div>

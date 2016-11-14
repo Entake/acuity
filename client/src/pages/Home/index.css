@@ -12,3 +12,9 @@ body {
 h4 {
   color: white;
 }
+.acuityDescriptionText {
+  padding-top: 32px;
+}
+.acuityDescription {
+  height: 256px;
+}
