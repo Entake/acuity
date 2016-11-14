@@ -13,7 +13,7 @@ import Footer from 'pages/shared/FooterComponent'
 import SearchBar from 'pages/shared/SearchBarComponent'
 import User from 'pages/shared/UserComponent'
 import ImageDescription from 'pages/shared/ImageDescription'
-import EnlargedImage from 'pages/shared/EnlargedImage'
+import AcuityImage from 'pages/shared/AcuityImageComponent'
 
 // Our styles
 import './index.css'
@@ -38,6 +38,7 @@ class UserProfile extends PureComponent {
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Latest'
+                  disabled
                 />
               </a>
               <a href='http://imgur.com'>
@@ -46,6 +47,7 @@ class UserProfile extends PureComponent {
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Popular'
+                  disabled
                 />
               </a>
               <a href='http://imgur.com'>
@@ -54,27 +56,24 @@ class UserProfile extends PureComponent {
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Random'
+                  disabled
                 />
               </a>
-              <a href='http://imgur.com'>
-                <Button
-                  backgroundColor='#00695c'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-12 columns'
-                  text='Random'
-                />
-              </a>
-              <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
-              <Button
-                background-color='purple'
-                color='white' height=''
-                gridSize='small-12 medium-12 large-12 columns'
-                text='Submit'
-              />
             </div>
           </LeftContainer>
           <RightContainer>
-            <EnlargedImage src='assets/swainSmall.jpg' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
+            <AcuityImage src='assets/swainSmall.jpg' imgHref='browseImage' tag1='test' tag2='test' tag3='tag4' />
           </RightContainer>
         </LayoutContainer>
         <Footer />
