@@ -49,7 +49,7 @@ export default class App extends PureComponent {
             <Route path='logout' onEnter={logout} />
             <Route path='register' component={Register} />
             <Route path='user' component={UserProfile} />
-            <Route path='404' component={FourOhFour} />
+            <Route path='*' component={FourOhFour} />
           </Route>
         </Router>
       </Provider>
