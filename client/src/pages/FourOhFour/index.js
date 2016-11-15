@@ -13,7 +13,7 @@ class fourOhFour extends PureComponent {
     return (
       <section className='oh'>
         <div className='text'>
-          <h1>404<br /></h1>
+          <h1>404 :(<br /></h1>
           <h2>This page and unicorns don't exist</h2>
         </div>
         <div className='ohImgContainer'>

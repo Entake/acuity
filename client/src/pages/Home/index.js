@@ -1,6 +1,7 @@
 // Libraries
 import { connect } from 'react-redux'
-import React, { PureComponent } from 'react'
+import React, { PropTypes, PureComponent } from 'react'
+import { Link } from 'react-router'
 
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
@@ -17,10 +18,10 @@ import './index.css'
 
 class Home extends PureComponent {
   static propTypes = {
+    user: PropTypes.object
   }
 
   render () {
-    console.log(this.props.user)
     return (
       <div>
         <LayoutContainer>
@@ -28,18 +29,18 @@ class Home extends PureComponent {
             <div className='row'>
               {
                 this.props.user
-                  ? <User userName={this.props.user.login} userProfile='user' quote='A Lovely user..' />
+                  ? <User userName={this.props.user.login} quote='A Lovely user..' />
                 : ''
-                }
+              }
               <SearchBar />
-              <a href='browse'>
+              <Link to='/upload'>
                 <Button
                   backgroundColor='#673AB7'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Latest'
                 />
-              </a>
+              </Link>
               <a href='browseImage'>
                 <Button
                   backgroundColor='#F44336'
@@ -58,14 +59,14 @@ class Home extends PureComponent {
                   disabled
                 />
               </a>
-              <a href='upload'>
+              <Link to='/upload'>
                 <Button
                   backgroundColor='#4CAF50'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Upload Image'
                 />
-              </a>
+              </Link>
               <a href='browse'>
                 <Button
                   backgroundColor='#00695c'
