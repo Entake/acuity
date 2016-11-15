@@ -98,6 +98,12 @@ export default router => {
     // Convert object response to array
     const labelsArray = Array.from(labels)
 
+    // If there are more than 5 labels, remove the rest
+    if (labelsArray.length > 5) {
+      logger.info('Removing excess labels')
+      labelsArray.splice(4)
+    }
+
     // Create db entry
     const dimensions = sizeOf(`${PATHS.srcDest}/${srcFile}`)
     const entry = {

@@ -15,10 +15,13 @@ export const loginAction = payload => ({
   payload
 })
 
-export const uploadAction = (payload, token) => {
-  return {
-    type: ActionTypes.DO_UPLOAD,
-    token: token,
-    payload
-  }
-}
+export const uploadAction = (payload, token) => ({
+  type: ActionTypes.DO_UPLOAD,
+  token: token,
+  payload
+})
+
+export const imageInfoAction = id => ({
+  type: ActionTypes.GET_INFO,
+  id: id
+})

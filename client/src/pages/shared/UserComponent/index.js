@@ -13,7 +13,7 @@ const User = (props) => {
     <section className='user'>
       <a href={userProfile}>
         <div className='avatar'>
-          <img src='/assets/aksel.jpg' />
+          <img src='/assets/user.png' />
         </div>
         <div className='username'>
           <h4>{userName}</h4><br />

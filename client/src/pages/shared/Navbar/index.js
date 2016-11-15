@@ -72,6 +72,11 @@ export default class Navbar extends PureComponent {
                 pressedButton={this.state.pressedNavButton}
               />
               <NavbarButton
+                to='/browse'
+                title='Browse'
+                pressedButton={this.state.pressedNavButton}
+              />
+              <NavbarButton
                 to='/upload'
                 title='Upload'
                 type='intern'
