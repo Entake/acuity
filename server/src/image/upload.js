@@ -124,9 +124,10 @@ export default router => {
 
     // Save image in db
     const image = new Image(entry)
-    await image.save()
+    const res = await image.save()
 
     // OK (successful)
     ctx.status = 200
+    ctx.body = res
   })
 }

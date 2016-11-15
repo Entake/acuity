@@ -1,5 +1,5 @@
 // Libraries
-import React, { PureComponent } from 'react'
+import React, { PropTypes, PureComponent } from 'react'
 
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
@@ -15,12 +15,13 @@ import EnlargedImage from 'pages/shared/EnlargedImage'
 // Our styles
 import './index.css'
 
-class Home extends PureComponent {
+class ViewImage extends PureComponent {
   static propTypes = {
-
+    params: PropTypes.object.isRequired
   }
 
   render () {
+    console.log(`/api/get/image/${this.props.params.id}`)
     return (
       <div>
         <LayoutContainer>
@@ -70,7 +71,7 @@ class Home extends PureComponent {
             </div>
           </LeftContainer>
           <RightContainer>
-            <EnlargedImage src='assets/swainSmall.jpg' />
+            <EnlargedImage src={`/api/get/image/${this.props.params.id}`} />
             {/* <UploadButton text='Upload' /> */}
             {/* I reccommend that you use the UploadBUtton Text part to communicate with hte user concerning upload failure/success */}
           </RightContainer>
@@ -81,4 +82,4 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+export default ViewImage

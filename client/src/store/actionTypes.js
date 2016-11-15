@@ -8,3 +8,8 @@ export const REDIRECTED_TO_LOGIN = 'REDIRECTED_TO_LOGIN'
 export const DO_LOGIN = 'DO_LOGIN'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILED = 'LOGIN_FAILED'
+
+// Image upload types
+export const DO_UPLOAD = 'DO_UPLOAD'
+export const UPLOAD_SUCCESS = 'UPLOAD_SUCCESS'
+export const UPLOAD_FAILED = 'UPLOAD_FAILED'
