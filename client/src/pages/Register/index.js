@@ -43,12 +43,9 @@ class Register extends PureComponent {
 
     // Check validity
     if (!this.form.checkValidity()) {
-      this.errorHandling()
+      this.handleEmptyFields()
       return
     }
-
-    // Check that passwords match
-    if (this.passwordInput.value !== this.passwordInputRepeat.value) return
 
     // Set all input fields to valid
     this.setState({
@@ -57,6 +54,14 @@ class Register extends PureComponent {
       passwordRepeatInvalid: false
     })
 
+    // Check that passwords match
+    if (this.passwordInput.value !== this.passwordInputRepeat.value) {
+      this.passwordInput.value !== this.passwordInputRepeat.value
+      ? this.setState({passwordInvalid: true, passwordRepeatInvalid: true})
+      : this.setState({passwordInvalid: false, passwordRepeatInvalid: false})
+      return
+    }
+
     this.props.registerUser({
       login: this.usernameInput.value,
       password: this.passwordInput.value,
@@ -64,15 +69,10 @@ class Register extends PureComponent {
     })
   }
 
-  errorHandling = () => {
+  handleEmptyFields = () => {
     !this.usernameInput.value ? this.setState({usernameInvalid: true}) : this.setState({usernameInvalid: false})
     !this.passwordInput.value ? this.setState({passwordInvalid: true}) : this.setState({passwordInvalid: false})
     !this.passwordInputRepeat.value ? this.setState({passwordRepeatInvalid: true}) : this.setState({passwordRepeatInvalid: false})
-
-    // Check that password fields are matching
-    ;(this.passwordInput.value !== this.passwordInputRepeat.value)
-    ? this.setState({passwordInvalid: true, passwordRepeatInvalid: true})
-    : this.setState({passwordInvalid: false, passwordRepeatInvalid: false})
   }
 
   componentDidUpdate = () => {
