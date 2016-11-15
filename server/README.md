@@ -43,20 +43,34 @@ However for now, Node is the only option.
 
 ### Using Node
 
-Running the server using Node requires that you have Node.js v6 or later installed.  
+Running the server using Node requires that you have Node.js LTS (v6.9.1) or later installed.  
 To run the server locally, do the following:  
 1. Clone this repository  
-2. Enter the `./server` folder  
-3. Install dependencies with `npm install` or `yarn`
+2. Enter the `./server` folder
+    * If you are running Windows, go to the [Windows](#running-on-windows-(x64)) section 
+3. Install dependencies with `npm install` or `yarn`  
+  If you are on Windows, use `npm install` as we have experienced some issues with `yarn` on that platform.
 4. Place [Google Vision API](https://cloud.google.com/vision/docs/common/auth) `key.json` file in `./server` folder  
    Keep in mind that the `key.json` file is mentioned in the projects `.gitignore` so that you don't leak API credentials 
-5. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
+5. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires [docker](https://docs.docker.com/engine/installation/))  
 6. Start the server using `npm start`  
 7. Start sending API requests on [http://localhost:8080](http://localhost:8080)  
 
+## Running on Windows (x64)
+In order for [Sharp](https://github.com/lovell/sharp) to build it's assets on your machine, you need to make sure that you have the needed build-tools installed, that [node-gyp](https://github.com/nodejs/node-gyp) requires. If you do not have these build tools installed, the installation will fail, and the server will not work.
+
+We recommend using the Node.js LTS (v6.9.1) version when running on Windows, as we have had some trouble getting it to run on v7.
+
+To install the build-tools, you need to do the following:
+* Open an elevated Powershell (open Powershell with admin rights)
+* Install `window-build-tools` with the following one-liner:  
+  `npm i -g --production windows-build-tools`  
+This usually takes a while, as it needs to install Python 2.7.12 and the Visual C++ Build Tools...
+* If the installation succeeds, go back to the [Using Node](#using-node) section.
+
 ## Development
 
-Development requires that you have Node.js v6 or later installed.  
+Development requires that you have Node.js LTS (v6.9.1) or later installed.  
 To run the server for development, just follow the instuctions from the [Using Node](#using-node) section.  
 To run the test suite simply execute `npm test`.  
 To see all available commands, see package.json.  

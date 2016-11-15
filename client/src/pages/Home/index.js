@@ -1,5 +1,7 @@
 // Libraries
-import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import React, { PropTypes, PureComponent } from 'react'
+import { Link } from 'react-router'
 
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
@@ -16,6 +18,7 @@ import './index.css'
 
 class Home extends PureComponent {
   static propTypes = {
+    user: PropTypes.object
   }
 
   render () {
@@ -24,16 +27,20 @@ class Home extends PureComponent {
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
-              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
+              {
+                this.props.user
+                  ? <User userName={this.props.user.login} quote='A Lovely user..' />
+                : ''
+              }
               <SearchBar />
-              <a href='browse'>
+              <Link to='/upload'>
                 <Button
                   backgroundColor='#673AB7'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-4 columns'
                   text='Latest'
                 />
-              </a>
+              </Link>
               <a href='browseImage'>
                 <Button
                   backgroundColor='#F44336'
@@ -52,14 +59,14 @@ class Home extends PureComponent {
                   disabled
                 />
               </a>
-              <a href='upload'>
+              <Link to='/upload'>
                 <Button
                   backgroundColor='#4CAF50'
                   color='white' height=''
                   gridSize='small-12 medium-12 large-12 columns'
                   text='Upload Image'
                 />
-              </a>
+              </Link>
               <a href='browse'>
                 <Button
                   backgroundColor='#00695c'
@@ -83,7 +90,7 @@ class Home extends PureComponent {
               <div className='small-12 medium-8 medium-offset-2 large-6 large-offset-3 columns'>
                 <div className='acuityDescriptionText'>
                   <h5>Acuity is the automatic open source image tagging website.
-                    <br />This site was developed using Google Vision API, all libaries and technologies are under their respective licenses, whilst our work is under the MIT license. #placeholderText
+                    <br />Nogle af de billeder som ses på siden er stadig placeholder billeder. Her på forsiden vil vi gerne have populære billeder, dette kunne vi dog ikke nå at integrerer. Vi har dog en views key i vores database til at gøre det senere
                   </h5>
                 </div>
               </div>
@@ -110,4 +117,8 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+const mapStateToProps = state => ({
+  user: state.getIn(['auth', 'user'])
+})
+
+export default connect(mapStateToProps)(Home)

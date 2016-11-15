@@ -20,7 +20,7 @@ import Browse from 'pages/Browse'
 import Upload from 'pages/Upload'
 import Register from 'pages/Register'
 import ViewImage from 'pages/ViewImage'
-import UserProfile from 'pages/UserProfile'
+// import UserProfile from 'pages/UserProfile'
 import FourOhFour from 'pages/FourOhFour'
 
 // Create enhanced history
@@ -48,7 +48,7 @@ export default class App extends PureComponent {
             <Route path='login' component={Login} />
             <Route path='logout' onEnter={logout} />
             <Route path='register' component={Register} />
-            <Route path='user' component={UserProfile} />
+            {/* <Route path='user' component={UserProfile} /> */}
             <Route path='*' component={FourOhFour} />
           </Route>
         </Router>

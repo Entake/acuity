@@ -1,6 +1,7 @@
 
 // Libraries
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
 // Local styling
 import './index.css'
@@ -16,11 +17,11 @@ const AcuityImage = (props) => {
   return (
     <div className='small-6 medium-3 large-3 columns'>
       <div className='a-img-container'>
-        <a href={imgHref}>
+        <Link to={imgHref}>
           <div className='img-container' data-content={`${tag1}, ${tag2}, ${tag3}`} >
             <img src={imageSource} />
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   )

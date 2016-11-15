@@ -7,7 +7,7 @@ import * as ActionTypes from 'store/actionTypes'
 // Set initial state
 const initialState = Map({
   token: localStorage.getItem('user.token'),
-  user: localStorage.getItem('user.data')
+  user: JSON.parse(localStorage.getItem('user.data'))
 })
 
 export default (state = initialState, action) => {
@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
 
     case ActionTypes.LOGIN_SUCCESS:
       localStorage.setItem('user.token', action.payload.token)
-      localStorage.setItem('user.data', action.payload.user)
+      localStorage.setItem('user.data', JSON.stringify(action.payload.user))
       return state
         .set('token', action.payload.token)
         .set('user', action.payload.user)

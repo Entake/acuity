@@ -1,11 +1,15 @@
 // Libraries
+import { connect } from 'react-redux'
 import React, { PropTypes, PureComponent } from 'react'
+
+// Our actions
+import { imageInfoAction } from 'store/actions'
 
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
 import LeftContainer from 'pages/shared/LayoutComponent/LeftSideComponent'
 import RightContainer from 'pages/shared/LayoutComponent/RightSideComponent'
-import Button from 'pages/shared/ButtonComponent'
+// import Button from 'pages/shared/ButtonComponent'
 import Footer from 'pages/shared/FooterComponent'
 import SearchBar from 'pages/shared/SearchBarComponent'
 import User from 'pages/shared/UserComponent'
@@ -17,35 +21,74 @@ import Tags from 'pages/shared/TagsComponent'
 import './index.css'
 
 class ViewImage extends PureComponent {
+  constructor () {
+    super()
+
+    this.state = {
+      loading: true
+    }
+  }
+
   static propTypes = {
-    params: PropTypes.object.isRequired
+    data: PropTypes.object,
+    params: PropTypes.object.isRequired,
+    getImageInfoFromID: PropTypes.func.isRequired
+  }
+
+  componentWillMount = () => {
+    this.props.getImageInfoFromID(this.props.params.id)
+  }
+
+  componentDidUpdate = () => {
+    if (this.props.data) {
+      this.setState({
+        loading: false
+      })
+    }
   }
 
   render () {
-    console.log(`/api/get/image/${this.props.params.id}`)
     return (
       <div>
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
-              <User userName='Elias Z. Jørgensen' userProfile='user' quote='A web developer' />
+              {
+                this.state.loading
+                  ? <User userName='Loading...' userProfile='user' quote='A lovely User' />
+                : <User userName={this.props.data.user.login} userProfile='user' quote='A lovely User' />
+              }
               <SearchBar />
-              <Tags tag1='Music' tag2='Human like creature' tag3='Man of Music' tag4='The Beatles' tag5='Best in the world' />
-              <a href='Upload'>
+              {
+                this.state.loading
+                ? ''
+                  : <Tags tags={this.props.data.image.tags} />
+              }
+              {/* <a href='Upload'>
                 <Button
-                  backgroundColor='#00695c'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-12 columns'
-                  text='Random'
+                backgroundColor='#00695c'
+                color='white' height=''
+                gridSize='small-12 medium-12 large-12 columns'
+                text='Random'
                 />
-              </a>
-              <ImageDescription title='This Is Amazing' description='This is the best kind of image on the internet, it was created by people!' />
-              <Button
+              </a> */}
+              {
+                this.state.loading
+                  ? <ImageDescription
+                    title='Loading title...'
+                    description='Loading description...'
+                    />
+                : <ImageDescription
+                  title={this.props.data.image.title}
+                  description={this.props.data.image.description}
+                  />
+              }
+              {/* <Button
                 background-color='purple'
                 color='white' height=''
                 gridSize='small-12 medium-12 large-12 columns'
                 text='Submit'
-              />
+              /> */}
             </div>
           </LeftContainer>
           <RightContainer>
@@ -60,4 +103,12 @@ class ViewImage extends PureComponent {
   }
 }
 
-export default ViewImage
+const mapStateToProps = state => ({
+  data: state.getIn(['browse', 'imageFromID'])
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getImageInfoFromID: id => dispatch(imageInfoAction(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ViewImage)

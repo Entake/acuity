@@ -13,3 +13,13 @@ export const LOGIN_FAILED = 'LOGIN_FAILED'
 export const DO_UPLOAD = 'DO_UPLOAD'
 export const UPLOAD_SUCCESS = 'UPLOAD_SUCCESS'
 export const UPLOAD_FAILED = 'UPLOAD_FAILED'
+
+// Browse types
+export const DO_BROWSE = 'DO_BROWSE'
+export const BROWSE_SUCCESS = 'BROWSE_SUCCESS'
+export const BROWSE_FAILED = 'BROWSE_FAILED'
+
+// View Image types
+export const GET_INFO = 'GET_INFO'
+export const GET_INFO_SUCCESS = 'GET_INFO_SUCCESS'
+export const GET_INFO_FAILED = 'GET_INFO_FAILED'
