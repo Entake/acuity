@@ -1,7 +1,7 @@
 FROM node:6.9.1
 
 # Install Yarn
-RUN npm i -g yarn
+# RUN npm i -g yarn
 
 # Create app folder
 RUN mkdir -p /app
@@ -9,7 +9,7 @@ WORKDIR /app
 
 # Cache npm dependencies
 COPY package.json yarn.lock /app/
-RUN yarn
+RUN npm i
 
 # Copy application files
 COPY . /app
