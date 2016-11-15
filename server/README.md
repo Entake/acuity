@@ -46,12 +46,12 @@ However for now, Node is the only option.
 Running the server using Node requires that you have Node.js LTS (v6.9.1) or later installed.  
 To run the server locally, do the following:  
 1. Clone this repository  
-2. Enter the `./server` folder
-    * If you are running Windows, go to the [Windows](#running-on-windows-(x64)) section 
+2. Enter the `./server` folder  
+    * If you are running Windows, go to the [Windows](#running-on-windows-(x64)) section  
 3. Install dependencies with `npm install` or `yarn`  
-  If you are on Windows, use `npm install` as we have experienced some issues with `yarn` on that platform.
+  If you are on Windows, use `npm install` as we have experienced some issues with `yarn` on that platform.  
 4. Place [Google Vision API](https://cloud.google.com/vision/docs/common/auth) `key.json` file in `./server` folder  
-   Keep in mind that the `key.json` file is mentioned in the projects `.gitignore` so that you don't leak API credentials 
+   Keep in mind that the `key.json` file is mentioned in the projects `.gitignore` so that you don't leak API credentials  
 5. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires [docker](https://docs.docker.com/engine/installation/))  
 6. Start the server using `npm start`  
 7. Start sending API requests on [http://localhost:8080](http://localhost:8080)  
