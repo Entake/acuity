@@ -13,11 +13,12 @@ const Tags = (props) => {
 
   return (
     <ul className='tagsContainer'>
-      <a><li className='tag tag1'>{tag1}</li></a>
-      <a><li className='tag tag2'>{tag2}</li></a>
-      <a><li className='tag tag3'>{tag3}</li></a>
-      <a><li className='tag tag4'>{tag4}</li></a>
-      <a><li className='tag tag5'>{tag5}</li></a>
+      <a className='hoverAbleTag'><li className='tag tag1'>{tag1}</li></a>
+      <a className='hoverAbleTag'><li className='tag tag2'>{tag2}</li></a>
+      <a className='hoverAbleTag'><li className='tag tag3'>{tag3}</li></a>
+      <a className='hoverAbleTag'><li className='tag tag4'>{tag4}</li></a>
+      <a className='hoverAbleTag'><li className='tag tag5'>{tag5}</li></a>
+      <a><li className='tag tag6'>+</li></a>
     </ul>
   )
 }

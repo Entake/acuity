@@ -19,7 +19,7 @@
   height: 44px;
 }
 .description {
-  height: calc(100vh - 432px - 64px - 24px - 64px - 32px);
+  height: calc(100vh - 432px - 128px - 24px - 64px - 32px);
   /* This code is based upon the same as in ImageTextInput
     At some point someone should account for the lack of a
     submit button. This would improve scalability
