@@ -41,7 +41,7 @@ To run it in a deployment friendly setup, see the [production build](#production
 
 ## Development
 
-Development requires that you have Node.js v6 or later installed.  
+Development requires that you have Node.js LTS (v6.9.1) or later installed.  
 To run the client locally, do the following:  
 1. Clone this repository  
 2. Enter the `./client` directory  
