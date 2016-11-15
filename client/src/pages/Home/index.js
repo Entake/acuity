@@ -69,13 +69,13 @@ class Home extends PureComponent {
                   disabled
                 />
               </a>
-              <div className='small-12 medium-12 large-12 columns'>
+              {/* <div className='small-12 medium-12 large-12 columns'>
                 <div className='acuityDescription'>
                   <div className='spinningUnicorn'>
                     <img src='assets/mascot.svg' />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </LeftContainer>
           <RightContainer>

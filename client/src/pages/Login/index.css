@@ -16,6 +16,7 @@ h1 {
 .login input {
   background-color: rgba(255, 255, 255, 0.87);
   border-bottom: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 .loginSection {
   margin-top: 128px;

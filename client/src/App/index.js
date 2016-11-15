@@ -21,6 +21,7 @@ import Register from 'pages/Register'
 import Login from 'pages/Login'
 import UserProfile from 'pages/UserProfile'
 import EnlargedImage from 'pages/EnlargedImage'
+import FourOhFour from 'pages/FourOhFour'
 
 // Create enhanced history
 const history = syncHistoryWithStore(browserHistory, store, {
@@ -47,6 +48,7 @@ export default class App extends PureComponent {
             <Route path='register' component={Register} />
             <Route path='user' component={UserProfile} />
             <Route path='browseImage' component={EnlargedImage} />
+            <Route path='404' component={FourOhFour} />
           </Route>
         </Router>
       </Provider>
