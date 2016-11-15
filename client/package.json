@@ -75,6 +75,10 @@
     ],
     "rules": {
       "react/no-unknown-property": 0
+    },
+    "globals": {
+      "localStorage": true,
+      "fetch": true
     }
   }
 }

@@ -1,0 +1,55 @@
+.footer {
+  position: static;
+  width: 100%;
+  height: auto;
+  /*margin-top: 64px;*/
+  /*margin-top: calc(100vh + 64px);*/
+  bottom: 0;
+  /*background-color: #333333;*/
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  box-shadow: inset 0px 2px 8px 0px rgba(0,0,0,0.4)
+}
+.footerContainer {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.footer-ul {
+  padding-top: 1em;
+  list-style: none;
+  font-size: 1em;
+  line-height: 2;
+}
+.footer-li-header {
+  font-size: 20px;
+  line-height: 2.5;
+  color: white;
+}
+.footer-li {
+  padding-left: 12px;
+  font-size: 18px;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+.footer a {
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+.footer a:hover {
+  transition:
+    color, ease, 0s;
+  line-height: 2;
+  color: white !important;
+}
+.copyright {
+  float: ;
+  text-align: center;
+  line-height: 2;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.66);
+}
+.githubLogo {
+  text-align: center;
+
+
+}

@@ -1,0 +1,52 @@
+.tagsContainer {
+  width: 100%;
+  margin-left: 0.7em !important;
+  margin-right: 0.7em !important;
+}
+.tag {
+  display: inline-block;
+  height: 48px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: calc(24px / 2);
+  margin-right: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 18px;
+  padding-bottom: 44px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.tagsContainer .hoverAbleTag .tag:hover {
+  transition:
+    box-shadow ease 0.3s,
+    color ease 0.3s;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  color: white;
+}
+.tagsContainer .hoverAbleTag .tag:focus {
+  transition:
+    box-shadow ease 0.3s,
+    color ease 0.3s;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  color: white;
+
+}
+.tag1 {
+  background-color: #F44336;
+}
+.tag2{
+  background-color: #E91E63;
+}
+.tag3{
+  background-color: #9C27B0;
+}
+.tag4{
+  background-color: #673AB7;
+}
+.tag5{
+  background-color: #3F51B5;
+}
+.tag6 {
+  background-color: #9E9E9E;
+  color: grey
+}

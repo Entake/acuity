@@ -5,6 +5,7 @@ uploads/
 public/
 server/db/
 
-npm-debug.log
+npm-debug.log*
 coverage.lcov
 key.json
+.DS_Store

@@ -49,7 +49,7 @@ To run the client locally, do the following:
 4. Repeat step 2 and 3 for the `./server` directory  
 4. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
 5. Start the project in development mode using `npm run dev` in the `./client` directory  
-6. Navigate to [https://localhost:3000](https://localhost:3000) in your browser  
+6. Navigate to [http://localhost:3000](http://localhost:3000) in your browser  
 
 To run the linter through the client codebase, run `npm run lint`.  
 To see all available commands, see package.json.  

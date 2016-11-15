@@ -1,0 +1,28 @@
+.searchbar {
+    background-image: url(/assets/search.svg);
+    background-position: calc(100% - 12px), 12px;
+    background-repeat: no-repeat;
+    height: 48px;
+    margin-bottom: 24px;
+    margin-left: -3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    text-align: center;
+    font-size: 20px;
+    word-spacing: 5px;
+    width: calc(100% + 6px);
+    border: none;
+}
+.searchbar:hover {
+    transition:
+        box-shadow 0s ease;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.searchbar:focus {
+    transition:
+        box-shadow 0.3s ease,
+        background-position 0.3s ease,
+        height 0.3s ease;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-position: calc(100% - 12px) 20px;
+    height: 64px;
+}

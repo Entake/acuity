@@ -1,0 +1,39 @@
+.imageTitleDescription {
+  padding-bottom: 32px;
+}
+.imageTitleDescription h4 {
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+}
+.imageTitleDescription h6 {
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 1.5;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+}
+.title {
+  height: 44px;
+}
+.description {
+  height: calc(100vh - 432px - 128px - 24px - 64px - 32px);
+  /* This code is based upon the same as in ImageTextInput
+    At some point someone should account for the lack of a
+    submit button. This would improve scalability
+  */
+  min-height: 44px;
+}
+
+@media only screen and (max-width: 90em) {
+    /* 80px times the amount of buttons, 4 * 80 = 320 + 72px for the searchbar
+      +96 for the user + 44 for the image title. + 32 for the padding in the top.
+      Finally in this undone example I've included the height of the submit button 80px
+     */
+  .description {
+    height: calc(100vh - 710px - 32px); /*breaks at 786px */
+    min-height: 44px;
+  }
+}

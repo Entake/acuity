@@ -1,0 +1,102 @@
+html {
+}
+body {
+  min-height: 100vh;
+  height: 100%;
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+  background: aqua;
+  background: radial-gradient(ellipse at center, rgba(69,90,100,1) 0%, rgba(38,50,56,1) 100%);
+}
+
+.input {
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 20px;
+  text-align: left;
+  word-spacing: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  resize: none;
+  border: none;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.38);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.input:hover {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: rgba(255, 255, 255, 0.33);
+}
+.input:focus {
+  transition:
+    box-shadow 0.3s ease,
+    background-position 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    height 0.3s ease;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-position: calc(100% - 12px) 20px;
+  background-color: white;
+  color: black;
+}
+.title {
+    height: 44px;
+}
+.description {
+    height: calc(100vh - 432px - 64px - 24px - 64px - 32px); /* This part of the site is currently only functional to 660px in height */
+    min-height: 44px;
+}
+
+.uploadButton {
+    background-color: #2e7d32;
+    position: relative;
+    display: block;
+    margin-top: calc((100vh - 64px - (71vw / 6)) / 2);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(71vw / 6);
+    height: calc(71vw / 6);
+    min-height: 64px;
+    min-width: 64px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    outline: none;
+}
+.uploadButton:hover {
+    transition:
+        box-shadow 0s ease;
+   box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+.uploadButton:focus {
+    transition:
+        box-shadow 0.3s ease,
+        background-position 0.3s ease;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-position: calc(100% - 12px) 20px;
+
+}
+@media only screen and (max-width: 1448.276px) {
+  .uploadButton {
+    margin-top: calc((100vh - 64px - (128px)) / 2);
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 16.6667%;*/
+    width: 128px;
+    height: 128px;
+    min-height: 64px;
+    min-width: 64px;
+  }
+}
