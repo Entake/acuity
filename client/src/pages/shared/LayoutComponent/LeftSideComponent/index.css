@@ -20,7 +20,7 @@
   }
 }
 
-@media only screen and (max-height: 786px) {
+@media only screen and (max-height: 700px) {
   .leftContainer {
     height: calc(100vh - 64px);
     overflow-y: scroll;

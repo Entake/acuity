@@ -31,32 +31,6 @@ class ViewImage extends PureComponent {
               <User userName='Elias Z. Jørgensen' userProfile='user' quote='A web developer' />
               <SearchBar />
               <Tags tag1='Music' tag2='Human like creature' tag3='Man of Music' tag4='The Beatles' tag5='Best in the world' />
-{/*
-              <a href='#'>
-                <Button
-                  backgroundColor='#c62828'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Music'
-                />
-              </a>
-              <a href='#'>
-                <Button
-                  backgroundColor='#d84315'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Pink'
-                />
-              </a>
-              <a href='#'>
-                <Button
-                  backgroundColor='#00695c'
-                  color='white' height=''
-                  gridSize='small-12 medium-12 large-4 columns'
-                  text='Head'
-                />
-              </a>
-*/}
               <a href='Upload'>
                 <Button
                   backgroundColor='#00695c'
