@@ -11,6 +11,7 @@ import SearchBar from 'pages/shared/SearchBarComponent'
 import User from 'pages/shared/UserComponent'
 import ImageDescription from 'pages/shared/ImageDescription'
 import EnlargedImage from 'pages/shared/EnlargedImage'
+import Tags from 'pages/shared/TagsComponent'
 
 // Our styles
 import './index.css'
@@ -29,6 +30,8 @@ class ViewImage extends PureComponent {
             <div className='row'>
               <User userName='Elias Z. Jørgensen' userProfile='user' quote='A web developer' />
               <SearchBar />
+              <Tags tag1='Music' tag2='Human like creature' tag3='Man of Music' tag4='The Beatles' tag5='Best in the world' />
+{/*
               <a href='#'>
                 <Button
                   backgroundColor='#c62828'
@@ -53,6 +56,7 @@ class ViewImage extends PureComponent {
                   text='Head'
                 />
               </a>
+*/}
               <a href='Upload'>
                 <Button
                   backgroundColor='#00695c'

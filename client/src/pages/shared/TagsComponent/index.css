@@ -1,0 +1,33 @@
+.tagsContainer {
+  width: 100%;
+  margin-left: 0.7em !important;
+  margin-right: 0.7em !important;
+}
+.tag {
+  display: inline-block;
+  height: 48px;
+  font-size: 16px;
+  color: white;
+  margin-bottom: calc(24px / 2);
+  margin-right: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 18px;
+  padding-bottom: 44px;
+}
+
+.tag1{
+  background-color: #F44336;
+}
+.tag2{
+  background-color: #E91E63;
+}
+.tag3{
+  background-color: #9C27B0;
+}
+.tag4{
+  background-color: #673AB7;
+}
+.tag5{
+  background-color: #3F51B5;
+}
