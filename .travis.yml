@@ -21,7 +21,7 @@ before_install:
   - npm list -g node-gyp --depth=0 || npm install -g node-gyp
 
 install:
-  - cd $TRAVIS_BUILD_DIR/server && yarn
+  - cd $TRAVIS_BUILD_DIR/server && npm i
   - cd $TRAVIS_BUILD_DIR/server && node-gyp rebuild
   - cd $TRAVIS_BUILD_DIR/client && yarn
 
