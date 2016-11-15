@@ -93,13 +93,18 @@ class Upload extends PureComponent {
               </div>
             </LeftContainer>
             <RightContainer>
-              <input
-                className='uploadButton'
-                type='file'
-                accept='.png,.jpg,.jpeg'
-                ref={i => { this.imageInput = i }}
-              />
-              {/* I reccommend that you use the UploadBUtton Text part to communicate with hte user concerning upload failure/success */}
+              <div className='filePickerContainer'>
+                <label for='file' className='uploadButtonLabel'>
+                  <input
+                    className='inputfile'
+                    name='file'
+                    id='file'
+                    type='file'
+                    accept='.png,.jpg,.jpeg'
+                    ref={i => { this.imageInput = i }}
+                    />
+                </label>
+              </div>
             </RightContainer>
           </LayoutContainer>
           <Footer />
