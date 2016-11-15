@@ -9,3 +9,41 @@ body {
   background: aqua;
   background: radial-gradient(ellipse at center, rgba(69,90,100,1) 0%, rgba(38,50,56,1) 100%);
 }
+
+.oh {
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  max-height: calc(100vh - 64px);
+  text-align: center;
+}
+.oh .text {
+  margin-top: 2vh;
+  height: 10vh;
+  max-width: 100%;
+}
+.ohImgContainer {
+  height: 100%;
+  width: 100vw;
+}
+.ohImgContainer:hover img {
+  transition:
+    transform ease 10s,
+    height ease 10s;
+  transform: rotateX(360deg);
+  height: 0vh;
+}
+.oh img {
+  margin-bottom: -10vh;
+  height: 75vh;
+}
+.oh img:hover {
+
+}
+.oh h1 {
+  margin-bottom: 0;
+}
+.oh h2 {
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.87);
+}

@@ -1,22 +1,25 @@
 // Libraries
-import React, { PureComponent } from 'react'
-
-// Our components
-import FourOhFour from 'pages/shared/FourOhFourComponent'
+import React, { PropTypes, PureComponent } from 'react'
 
 // Our styles
 import './index.css'
 
 class fourOhFour extends PureComponent {
   static propTypes = {
-
+    src: PropTypes.string.isRequired
   }
 
   render () {
     return (
-      <div>
-        <FourOhFour />
-      </div>
+      <section className='oh'>
+        <div className='text'>
+          <h1>404<br /></h1>
+          <h2>This page and unicorns don't exist</h2>
+        </div>
+        <div className='ohImgContainer'>
+          <img src='assets/mascot.svg' />
+        </div>
+      </section>
     )
   }
 }
