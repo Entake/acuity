@@ -1,0 +1,41 @@
+html {
+}
+body {
+  min-height: 100vh;
+  height: 100%;
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+  background: aqua;
+  background: radial-gradient(ellipse at center, rgba(69,90,100,1) 0%, rgba(38,50,56,1) 100%);
+}
+h1 {
+  color: rgba(255, 255, 255, 0.87);
+}
+p {
+  font-size:  16px;
+}
+h5 {
+  color: white;
+  font-weight: 300;
+}
+.acuityDescriptionText {
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+.spinningUnicorn img {
+  text-align: center;
+  margin: -64px; /*this is due to the weird format of the SVG */
+  height: auto;
+  width: auto;
+  max-height: calc(100vh - 480px);
+  /*max-width: 25vw;*/
+  padding-left: 128px;
+  padding-top: 32px;
+  /*max-width: 380px;*/
+}
+.spinningUnicorn:hover  {
+  transition:
+    transform ease 1s;
+  transform: rotateZ(360deg);
+}

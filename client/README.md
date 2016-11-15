@@ -1,13 +1,29 @@
-<p align="center"><a href="https://thatimagetagging.site"><img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" /></a></p>
+<p align="center">
+    <a href="https://thatimagetagging.site">
+        <img src="https://cloud.githubusercontent.com/assets/3519438/19272712/d96cc6e8-8fc9-11e6-90f2-00e7a4156fff.png" alt="Acuity" height="200" />
+    </a>
+</p>
 <h3 align="center">Acuity Client</h3>
 <p align="center">React/Redux/Rx client for the Acuity project</p>
 <p align="center">
-<a href="https://gitter.im/acuity-project/Lobby"><img src="https://img.shields.io/gitter/room/entake/acuity.svg"></img></a>
-<a href="https://travis-ci.org/Entake/acuity"><img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status"></a>
-<a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License"></a>
-<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style"></a>
-<a href="https://david-dm.org/Entake/acuity?path=client" title="dependencies status"><img src="https://david-dm.org/Entake/acuity/status.svg?path=client" /></a>
-<a href="https://david-dm.org/Entake/acuity?path=client&type=dev" title="devDependencies status"><img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=client"/></a>
+    <a href="https://gitter.im/acuity-project/Lobby">
+        <img src="https://img.shields.io/gitter/room/entake/acuity.svg" />
+    </a>
+    <a href="https://travis-ci.org/Entake/acuity">
+        <img src="https://travis-ci.org/Entake/acuity.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="https://raw.githubusercontent.com/Entake/acuity/master/LICENSE">
+        <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="License">
+    </a>
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Code Style">
+    </a>
+    <a href="https://david-dm.org/Entake/acuity?path=client" title="dependencies status">
+        <img src="https://david-dm.org/Entake/acuity/status.svg?path=client" />
+    </a>
+    <a href="https://david-dm.org/Entake/acuity?path=client&type=dev" title="devDependencies status">
+        <img src="https://david-dm.org/Entake/acuity/dev-status.svg?path=client"/>
+    </a>
 </p>
 
 ---
@@ -25,7 +41,7 @@ To run it in a deployment friendly setup, see the [production build](#production
 
 ## Development
 
-Development requires that you have Node.js v6 or later installed.  
+Development requires that you have Node.js LTS (v6.9.1) or later installed.  
 To run the client locally, do the following:  
 1. Clone this repository  
 2. Enter the `./client` directory  
@@ -33,7 +49,7 @@ To run the client locally, do the following:
 4. Repeat step 2 and 3 for the `./server` directory  
 4. Make sure you have a local RethinkDB server running (or start one using `npm run db:create`, requires docker)  
 5. Start the project in development mode using `npm run dev` in the `./client` directory  
-6. Navigate to [https://localhost:3000](https://localhost:3000) in your browser  
+6. Navigate to [http://localhost:3000](http://localhost:3000) in your browser  
 
 To run the linter through the client codebase, run `npm run lint`.  
 To see all available commands, see package.json.  

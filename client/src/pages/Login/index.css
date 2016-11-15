@@ -1,0 +1,33 @@
+html {
+}
+body {
+  min-height: 100vh;
+  height: 100%;
+  max-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+  background: aqua;
+  background: radial-gradient(ellipse at center, rgba(69,90,100,1) 0%, rgba(38,50,56,1) 100%);
+}
+h1 {
+  color: white;
+  padding-bottom: 16px;
+}
+.login input {
+  background-color: rgba(255, 255, 255, 0.87);
+  border-bottom: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+.loginSection {
+  margin-top: 128px;
+}
+.loginButton{
+  background-color: green;
+  color: white;
+  width: 100%;
+  height: 44px;
+}
+
+.input.title.invalid {
+  border: 1px solid red;
+}

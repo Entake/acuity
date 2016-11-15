@@ -1,13 +1,13 @@
 {
   "name": "acuity-backend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Acuity REST Backend",
   "main": "index.js",
   "scripts": {
     "test": "node test/index.js | tap-diff",
     "test-ci": "nyc npm test && nyc report --reporter=lcov > coverage.lcov",
     "lint": "eslint src/",
-    "dev": "nodemon index",
+    "dev": "nodemon --watch src index",
     "start": "node index",
     "db:create": "node util/db/create",
     "db:start": "docker start acuitydb",
@@ -21,7 +21,7 @@
   "keywords": [
     "REST",
     "JavaScript",
-    "thatimagetaggingsite",
+    "Acuity",
     "Node",
     "RethinkDB",
     "GoogleVision"
@@ -50,6 +50,9 @@
     "tape": "^4.6.2"
   },
   "dependencies": {
+    "@google-cloud/vision": "^0.5.0",
+    "bluebird": "^3.4.6",
+    "image-size": "^0.5.0",
     "jsonwebtoken": "^7.1.9",
     "kcors": "^2.2.0",
     "koa": "^2.0.0",
@@ -57,12 +60,16 @@
     "koa-convert": "^1.2.0",
     "koa-generic-session": "^1.11.3",
     "koa-morgan": "^1.0.1",
+    "koa-multer": "^1.0.0",
     "koa-passport": "^2.2.2",
     "koa-router": "^7.0.1",
+    "mime-types": "^2.1.12",
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0",
+    "sharp": "^0.16.2",
     "thinky": "^2.3.6",
+    "uuid": "^2.0.3",
     "winston": "^2.2.0"
   },
   "babel": {

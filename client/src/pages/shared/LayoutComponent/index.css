@@ -1,0 +1,7 @@
+.layoutContainer {
+    /*padding-top: 64px;*/
+    position: static;
+    height: calc(100vh - 64px);
+    max-width: 100vw;
+    width: 100vw;
+}

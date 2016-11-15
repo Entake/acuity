@@ -7,7 +7,7 @@ module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
   hot: true,
   inline: true,
   progress: true,
-  https: true, // Can be set to true, for testing HTTP/2
+  // https: true, // Can be set to true, for testing HTTP/2
   clientLogLevel: 'none',
   content: '/public',
   publicPath: '/',
@@ -22,11 +22,11 @@ module.exports = new WebpackDevServer(Webpack(WebpackConfig), {
   },
   proxy: {
     '/api/*': {
-      target: 'https://localhost:8080'
+      target: 'http://localhost:8080'
     }
   }
 }).listen(3000, 'localhost', (err, res) => {
   if (err) return console.warn(err)
 
-  console.log('🚧  Webpack development server listening at https://localhost:3000')
+  console.log('🚧  Webpack development server listening at http://localhost:3000')
 })
