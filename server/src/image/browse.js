@@ -8,7 +8,7 @@ export default router => {
 
     if (!page || page <= 0) page = 1
 
-    const images = await Image.filter({})
+    const images = await Image.filter({}) // .limit(12)
 
     ctx.body = images
   }))

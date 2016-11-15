@@ -94,7 +94,7 @@ class Upload extends PureComponent {
             </LeftContainer>
             <RightContainer>
               <div className='filePickerContainer'>
-                <label for='file' className='uploadButtonLabel'>
+                <label htmlFor='file' className='uploadButtonLabel'>
                   <input
                     className='inputfile'
                     name='file'

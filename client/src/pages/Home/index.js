@@ -1,4 +1,5 @@
 // Libraries
+import { connect } from 'react-redux'
 import React, { PureComponent } from 'react'
 
 // Our components
@@ -19,12 +20,17 @@ class Home extends PureComponent {
   }
 
   render () {
+    console.log(this.props.user)
     return (
       <div>
         <LayoutContainer>
           <LeftContainer>
             <div className='row'>
-              <User userName='Aksel N. Ladegaard' userProfile='user' quote='A Reactive Engineer' />
+              {
+                this.props.user
+                  ? <User userName={this.props.user.login} userProfile='user' quote='A Lovely user..' />
+                : ''
+                }
               <SearchBar />
               <a href='browse'>
                 <Button
@@ -110,4 +116,8 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+const mapStateToProps = state => ({
+  user: state.getIn(['auth', 'user'])
+})
+
+export default connect(mapStateToProps)(Home)
