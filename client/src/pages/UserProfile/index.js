@@ -12,7 +12,7 @@ import Button from 'pages/shared/ButtonComponent'
 import Footer from 'pages/shared/FooterComponent'
 import SearchBar from 'pages/shared/SearchBarComponent'
 import User from 'pages/shared/UserComponent'
-import ImageDescription from 'pages/shared/ImageDescription'
+// import ImageDescription from 'pages/shared/ImageDescription'
 import AcuityImage from 'pages/shared/AcuityImageComponent'
 
 // Our styles

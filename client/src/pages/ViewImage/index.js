@@ -1,5 +1,5 @@
 // Libraries
-import React, { PureComponent } from 'react'
+import React, { PropTypes, PureComponent } from 'react'
 
 // Our components
 import LayoutContainer from 'pages/shared/LayoutComponent'
@@ -17,7 +17,7 @@ import './index.css'
 
 class ViewImage extends PureComponent {
   static propTypes = {
-
+    params: PropTypes.object.isRequired
   }
 
   render () {
