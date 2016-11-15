@@ -90,7 +90,7 @@ class Home extends PureComponent {
               <div className='small-12 medium-8 medium-offset-2 large-6 large-offset-3 columns'>
                 <div className='acuityDescriptionText'>
                   <h5>Acuity is the automatic open source image tagging website.
-                    <br />This site was developed using Google Vision API, all libaries and technologies are under their respective licenses, whilst our work is under the MIT license. #placeholderText
+                    <br />Nogle af de billeder som ses på siden er stadig placeholder billeder. Her på forsiden vil vi gerne have populære billeder, dette kunne vi dog ikke nå at integrerer. Vi har dog en views key i vores database til at gøre det senere
                   </h5>
                 </div>
               </div>
