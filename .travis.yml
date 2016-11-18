@@ -16,6 +16,7 @@ env:
 
 before_install:
   - npm list -g yarn --depth=0 || npm install -g yarn
+  - npm config set loglevel warn # When using npm install, only print errors/warnings
 
 install:
   - cd $TRAVIS_BUILD_DIR/server && npm i

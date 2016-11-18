@@ -3,6 +3,9 @@ FROM node:6.9.1
 # Install Yarn
 # RUN npm i -g yarn
 
+# When using npm install, only print errors/warnings
+RUN npm config set loglevel warn
+
 # Create app folder
 RUN mkdir -p /app
 WORKDIR /app
