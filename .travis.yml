@@ -9,12 +9,10 @@ node_js:
 
 env:
   global:
-    - ACUITY_SERVER_VERSION=0.2.0
-    - ACUITY_CLIENT_VERSION=0.2.0
-    - SERVER_DEBUG_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION-debug
-    - SERVER_RELEASE_IMG=entake/acuity-server:$ACUITY_SERVER_VERSION
-    - CLIENT_DEBUG_IMG=entake/acuity-client:$ACUITY_CLIENT_VERSION-debug
-    - CLIENT_RELEASE_IMG=entake/acuity-client:$ACUITY_CLIENT_VERSION
+    - SERVER_DEBUG_IMG=entake/acuity-server:0.3.0-debug
+    - SERVER_RELEASE_IMG=entake/acuity-server:0.3.0
+    - CLIENT_DEBUG_IMG=entake/acuity-client:0.3.0-debug
+    - CLIENT_RELEASE_IMG=entake/acuity-client:0.3.0
 
 before_install:
   - npm list -g yarn --depth=0 || npm install -g yarn
