@@ -1993,7 +1993,7 @@ exports-loader@^0.6.3:
     loader-utils "0.2.x"
     source-map "0.1.x"
 
-express@^4.13.3, express@^4.14.0:
+express@^4.13.3:
   version "4.14.0"
   resolved "https://registry.yarnpkg.com/express/-/express-4.14.0.tgz#c1ee3f42cdc891fb3dc650a8922d51ec847d0d66"
   dependencies:
