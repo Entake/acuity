@@ -1,5 +1,5 @@
 // Libraries
-import Path from 'path'
+const Path = require('path')
 
 exports.db = {
   host: process.env.ACUITY_DB_URL || 'localhost',
