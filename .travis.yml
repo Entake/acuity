@@ -34,10 +34,12 @@ after_success:
   - docker build -t $CLIENT_DEBUG_IMG $TRAVIS_BUILD_DIR/client # Build client debug image
   - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$SERVER_DEBUG_IMG"; fi # Push server debug image to registry except on master
   - if [ "$TRAVIS_BRANCH" != "master" ]; then docker push "$CLIENT_DEBUG_IMG"; fi # Push client debug image to registry except on master
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then ./$TRAVIS_BUILD_DIR/util/devDeploy.sh; fi # Deploy on development server
+
 
 deploy:
   provider: script
-  script: $TRAVIS_BUILD_DIR/util/deploy.sh
+  script: $TRAVIS_BUILD_DIR/util/hubRelease.sh
   on:
     branch: master
 
