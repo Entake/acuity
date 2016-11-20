@@ -24,6 +24,10 @@ class Upload extends PureComponent {
     this.titleInput
     this.descriptionInput
     this.imageInput
+
+    this.state = {
+      uploading: false
+    }
   }
 
   static propTypes = {
@@ -43,6 +47,7 @@ class Upload extends PureComponent {
     data.append('image', this.imageInput.files[0])
 
     this.props.submitImage(data, this.props.token)
+    this.setState({ uploading: true })
   }
 
   componentDidUpdate () {
@@ -52,7 +57,6 @@ class Upload extends PureComponent {
   }
 
   render () {
-    console.log(this.props.image)
     return (
       <form encType='multipart/form-data' ref={f => { this.form = f }} id='uploadForm'>
         <div>
@@ -87,7 +91,11 @@ class Upload extends PureComponent {
                     className='button'
                     style={{color: 'white', backgroundColor: 'purple'}}
                     onClick={this.handleClick} >
-                    Submit
+                    {
+                      this.state.uploading
+                        ? <img src='/assets/gear.svg' />
+                      : 'Submit'
+                    }
                   </button>
                 </div>
               </div>
